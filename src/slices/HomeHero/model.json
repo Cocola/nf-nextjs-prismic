@@ -1,0 +1,98 @@
+{
+  "id": "home_hero",
+  "type": "SharedSlice",
+  "name": "HomeHero",
+  "description": "HomeHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "current_position_date": {
+          "type": "Text",
+          "config": {
+            "label": "Current position date",
+            "placeholder": ""
+          }
+        },
+        "current_position_title": {
+          "type": "Text",
+          "config": {
+            "label": "Current position title",
+            "placeholder": ""
+          }
+        },
+        "current_position_subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Current position subtitle",
+            "placeholder": ""
+          }
+        },
+        "past_position_date": {
+          "type": "Text",
+          "config": {
+            "label": "Past position date",
+            "placeholder": ""
+          }
+        },
+        "past_position_title": {
+          "type": "Text",
+          "config": {
+            "label": "Past position title",
+            "placeholder": ""
+          }
+        },
+        "past_position_subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Past position subtitle",
+            "placeholder": ""
+          }
+        },
+        "linkedin_link": {
+          "type": "Link",
+          "config": {
+            "label": "Linkedin link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "linkedin_link_label": {
+          "type": "Text",
+          "config": {
+            "label": "Linkedin link label",
+            "placeholder": ""
+          }
+        },
+        "project_link": {
+          "type": "Link",
+          "config": {
+            "label": "Project link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "project_link_label": {
+          "type": "Text",
+          "config": {
+            "label": "Project link label",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

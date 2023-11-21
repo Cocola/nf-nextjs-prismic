@@ -1,0 +1,11 @@
+@keyframes translate0 {
+	to {
+		transform: translateX(-33%);
+	}
+}
+
+.animate {
+	animation: translate0 linear forwards;
+	animation-timeline: scroll(block root);
+    transform: translateX(33%);
+}

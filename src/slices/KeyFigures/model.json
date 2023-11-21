@@ -1,0 +1,59 @@
+{
+  "id": "key_figures",
+  "type": "SharedSlice",
+  "name": "KeyFigures",
+  "description": "KeyFigures",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "figure": {
+          "type": "Text",
+          "config": {
+            "label": "Figure",
+            "placeholder": ""
+          }
+        },
+        "figure_title": {
+          "type": "Text",
+          "config": {
+            "label": "Figure title",
+            "placeholder": ""
+          }
+        },
+        "figure_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Figure Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "accent": {
+          "type": "Boolean",
+          "config": {
+            "label": "Accent",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Key Figures"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "1"
+						}
+					],
+					[
+						"figure_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "satellites",
+							"type": "Text"
+						}
+					],
+					[
+						"figure_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ullamco dolore ea fugiat et enim nulla et amet voluptate. Lorem mollit nisi labore sint aute officia consequat Lorem cillum sit laborum quis consectetur aute occaecat. Incididunt aute nisi excepteur."
+									}
+								}
+							]
+						}
+					],
+					[
+						"accent",
+						{
+							"__TYPE__": "BooleanContent",
+							"value": false
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "2"
+						}
+					],
+					[
+						"figure_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "stuffs"
+						}
+					],
+					[
+						"figure_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ullamco dolore ea fugiat et enim nulla et amet voluptate. Lorem mollit nisi labore sint aute officia consequat Lorem cillum sit laborum quis consectetur aute occaecat. Incididunt aute nisi excepteur.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "3"
+						}
+					],
+					[
+						"figure_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Awesome"
+						}
+					],
+					[
+						"figure_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ullamco dolore ea fugiat et enim nulla et amet voluptate. Lorem mollit nisi labore sint aute officia consequat Lorem cillum sit laborum quis consectetur aute occaecat. Incididunt aute nisi excepteur.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "4"
+						}
+					],
+					[
+						"figure_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Yet Another"
+						}
+					],
+					[
+						"figure_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ullamco dolore ea fugiat et enim nulla et amet voluptate. Lorem mollit nisi labore sint aute officia consequat Lorem cillum sit laborum quis consectetur aute occaecat. Incididunt aute nisi excepteur.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"figure",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "200"
+						}
+					],
+					[
+						"figure_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "The main"
+						}
+					],
+					[
+						"figure_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ullamco dolore ea fugiat et enim nulla et amet voluptate. Lorem mollit nisi labore sint aute officia consequat Lorem cillum sit laborum quis consectetur aute occaecat. Incididunt aute nisi excepteur.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"accent",
+						{
+							"__TYPE__": "BooleanContent",
+							"value": true
+						}
+					]
+				]
+			}
+		]
+	}
+]
