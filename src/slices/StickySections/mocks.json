@@ -5,36 +5,14 @@
 		"primary": {
 			"title": {
 				"__TYPE__": "FieldContent",
-				"value": "cotton",
-				"type": "Text"
+				"type": "Text",
+				"value": "Sticky Sections"
 			}
 		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
 				"value": [
-					[
-						"icon",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"id": "mock_Media_link",
-								"kind": "image/jpeg",
-								"name": "mock_name",
-								"url": "https://source.unsplash.com/daily",
-								"size": "0",
-								"__TYPE__": "FileLink"
-							}
-						}
-					],
-					[
-						"title",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "conversation",
-							"type": "Text"
-						}
-					],
 					[
 						"description",
 						{
@@ -43,8 +21,10 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Velit id anim et consectetur."
-									}
+										"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nihil deserunt porro nostrum quae dolores molestias et quos repellat nobis! Veniam facilis rem minus illum voluptate odit praesentium explicabo sapiente?",
+										"spans": []
+									},
+									"direction": "ltr"
 								}
 							]
 						}
@@ -52,7 +32,6 @@
 					[
 						"image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
@@ -70,7 +49,26 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
+						}
+					],
+					[
+						"icon_svg_path",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "M56.0156 6.37207C58.2188 4.16895 61.7812 4.16895 63.9609 6.37207L114.609 56.9971C116.812 59.2002 116.812 62.7627 114.609 64.9424L63.9844 115.591C61.7812 117.794 58.2188 117.794 56.0391 115.591L5.39062 64.9658C3.1875 62.7627 3.1875 59.2002 5.39062 57.0205L56.0156 6.37207ZM66.6328 3.72363C62.9766 0.0673829 57.0469 0.0673829 53.3672 3.72363L2.74219 54.3486C-0.914062 58.0049 -0.914062 63.9346 2.74219 67.6143L53.3672 118.239C57.0234 121.896 62.9531 121.896 66.6328 118.239L117.258 67.6143C120.914 63.958 120.914 58.0283 117.258 54.3486L66.6328 3.72363Z"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Sticky Section 1"
 						}
 					]
 				]

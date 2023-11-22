@@ -524,16 +524,6 @@ export interface StickySectionsSliceDefaultPrimary {
  */
 export interface StickySectionsSliceDefaultItem {
   /**
-   * Icon field in *StickySections → Items*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: sticky_sections.items[].icon
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  icon: prismic.LinkToMediaField;
-
-  /**
    * Title field in *StickySections → Items*
    *
    * - **Field Type**: Text
@@ -562,6 +552,16 @@ export interface StickySectionsSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Icon svg path field in *StickySections → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sticky_sections.items[].icon_svg_path
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  icon_svg_path: prismic.KeyTextField;
 }
 
 /**

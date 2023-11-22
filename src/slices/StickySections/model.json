@@ -21,14 +21,6 @@
         }
       },
       "items": {
-        "icon": {
-          "type": "Link",
-          "config": {
-            "label": "Icon",
-            "placeholder": "",
-            "select": "media"
-          }
-        },
         "title": {
           "type": "Text",
           "config": {
@@ -51,6 +43,13 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "icon_svg_path": {
+          "type": "Text",
+          "config": {
+            "label": "Icon svg path",
+            "placeholder": ""
           }
         }
       }

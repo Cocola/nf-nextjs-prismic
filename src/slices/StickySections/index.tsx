@@ -29,27 +29,40 @@ const StickySections = ({ slice }: StickySectionsProps): JSX.Element => {
         </h2>
         {slice.items.map((el, index) => {
           return (
-            <div
-              key={index}
-              className={clsx("p-8 mb-8 rounded-2xl dark:text-zinc-800")}
-            >
-              <div className="grid grid-cols-2">
+            <div key={index} className={clsx("py-4")}>
+              <div className="grid grid-cols-2 gap-32">
                 <div>
-                  <div className="min-h-screen grid place-content-center">
-                    <h3 className="text-6xl md:text-9xl font-black w-full">
-                      <span className="block text-lg md:text-4xl font-semibold">
-                        {el.title}
-                      </span>
-                    </h3>
+                  <div className="min-h-screen flex flex-col justify-center ">
+                    <div className="flex flex-col gap-4">
+                      {el.icon_svg_path && (
+                        <svg
+                          viewBox="0 0 120 120"
+                          height="120"
+                          width={"120"}
+                          fill="black"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="fill-current "
+                        >
+                          <path d={el.icon_svg_path} />
+                        </svg>
+                      )}
+                      <h3 className="text-6xl md:text-9xl font-black w-full">
+                        <span className="block text-lg md:text-4xl font-semibold">
+                          {el.title}
+                        </span>
+                      </h3>
+                    </div>
                   </div>
-                  <div className="min-h-screen">
+                  <div className="min-h-[50DVH] text-lg">
                     <PrismicRichText field={el.description} />
                   </div>
                 </div>
-                <PrismicImage
-                  className="sticky top-0 min-h-screen aspect-auto"
-                  field={el.image}
-                />
+                <div className="min-h-screen">
+                  <PrismicImage
+                    className="rounded-xl sticky top-16"
+                    field={el.image}
+                  />
+                </div>
               </div>
             </div>
           )
