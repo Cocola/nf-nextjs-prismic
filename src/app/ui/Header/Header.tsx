@@ -7,7 +7,9 @@ export const Header = () => {
       <div className="mx-auto w-full max-w-6xl">
         <div className="flex justify-between items-center">
           <svg
-            className={"h-16 w-16 fill-zinc-800 bg-primary-light rounded-full"}
+            className={
+              "h-12 w-12 md:h-16 md:w-16 fill-zinc-800 bg-primary-light rounded-full"
+            }
             viewBox="0 0 280 280"
             xmlns="http://www.w3.org/2000/svg"
           >
