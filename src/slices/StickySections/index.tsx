@@ -59,7 +59,7 @@ const StickySections = ({ slice }: StickySectionsProps): JSX.Element => {
                         </h3>
                       </div>
                     </div>
-                    <div className="md:min-h-[50DVH] text-sm md:text-lg">
+                    <div className="md:min-h-[50DVH] text-xs md:text-lg">
                       <PrismicRichText field={el.description} />
                     </div>
                   </div>
