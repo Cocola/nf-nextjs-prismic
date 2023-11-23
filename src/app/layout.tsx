@@ -3,7 +3,7 @@ import { repositoryName } from "@/prismicio"
 
 import "./ui/globals.css"
 import { dmsans } from "./ui/fonts"
-import { Header } from "./ui/Header/Header"
+import Header from "./ui/Header/Header"
 import { Footer } from "./ui/Footer/Footer"
 
 export default function RootLayout({
