@@ -5,7 +5,6 @@ import { PrismicLink } from "@prismicio/react"
 export default async function Header() {
   const client = createClient()
   const nav = await client.getSingle("navigation")
-  console.log("🚀 ~ file: Header.tsx:8 ~ Header ~ nav:", nav.data.slices)
 
   return (
     <header className="px-6 py-2 md:py-4">
