@@ -27,7 +27,10 @@ export default async function Header() {
             <ul className="flex gap-8">
               {nav.data.slices.map((item) => {
                 return (
-                  <li key={JSON.stringify(item)}>
+                  <li
+                    key={JSON.stringify(item)}
+                    className="text-xs md:text-base"
+                  >
                     <PrismicLink field={item.primary.link}>
                       {item.primary.name}
                     </PrismicLink>
