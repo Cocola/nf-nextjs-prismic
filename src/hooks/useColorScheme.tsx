@@ -2,7 +2,8 @@ import { useEffect, useMemo } from "react"
 import { useMediaQuery } from "react-responsive"
 import { useLocalStorage } from "react-use"
 
-const COLOR_SCHEME = "colorScheme"
+const COLOR_SCHEME = "darkMode"
+
 export function useColorScheme() {
   const systemPrefersDark = useMediaQuery(
     {
@@ -10,25 +11,21 @@ export function useColorScheme() {
     },
     undefined
   )
-
-  const [isDark, setIsDark] = useLocalStorage(COLOR_SCHEME)
-
-  const value = useMemo(
-    () => (isDark === undefined ? !!systemPrefersDark : isDark),
-    [isDark, systemPrefersDark]
-  )
+  const [isDark, setIsDark] = useLocalStorage(COLOR_SCHEME, systemPrefersDark)
 
   useEffect(() => {
     const colorSchemeRoot = document.querySelector("#colorScheme-root")
-    if (value) {
-      colorSchemeRoot !== null && colorSchemeRoot.classList.add("dark")
-    } else {
-      colorSchemeRoot !== null && colorSchemeRoot.classList.remove("dark")
+    if (colorSchemeRoot) {
+      if (isDark) {
+        colorSchemeRoot.classList.add("dark")
+      } else {
+        colorSchemeRoot.classList.remove("dark")
+      }
     }
-  }, [value])
+  }, [isDark])
 
   return {
-    isDark: value,
+    isDark: isDark,
     setIsDark,
   }
 }
