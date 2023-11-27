@@ -1,0 +1,51 @@
+{
+  "id": "projects_grid",
+  "type": "SharedSlice",
+  "name": "ProjectsGrid",
+  "description": "ProjectsGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "project_link": {
+          "type": "Link",
+          "config": {
+            "label": "Project link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "project_title": {
+          "type": "Text",
+          "config": {
+            "label": "Project title",
+            "placeholder": ""
+          }
+        },
+        "project_thumb": {
+          "type": "Image",
+          "config": {
+            "label": "Project thumb",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "accent": {
+          "type": "Boolean",
+          "config": {
+            "label": "Accent",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      }
+    }
+  ]
+}

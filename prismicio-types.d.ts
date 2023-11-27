@@ -38,7 +38,10 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = HomeHeroSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | ProjectsGridSlice
+  | HomeHeroSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -552,6 +555,82 @@ export type ProjectHeroSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ProjectsGrid → Items*
+ */
+export interface ProjectsGridSliceDefaultItem {
+  /**
+   * Project link field in *ProjectsGrid → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_grid.items[].project_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_link: prismic.LinkField;
+
+  /**
+   * Project title field in *ProjectsGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_grid.items[].project_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  project_title: prismic.KeyTextField;
+
+  /**
+   * Project thumb field in *ProjectsGrid → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_grid.items[].project_thumb
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  project_thumb: prismic.ImageField<never>;
+
+  /**
+   * Accent field in *ProjectsGrid → Items*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: projects_grid.items[].accent
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  accent: prismic.BooleanField;
+}
+
+/**
+ * Default variation for ProjectsGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<ProjectsGridSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ProjectsGrid*
+ */
+type ProjectsGridSliceVariation = ProjectsGridSliceDefault;
+
+/**
+ * ProjectsGrid Shared Slice
+ *
+ * - **API ID**: `projects_grid`
+ * - **Description**: ProjectsGrid
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsGridSlice = prismic.SharedSlice<
+  "projects_grid",
+  ProjectsGridSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -723,6 +802,10 @@ declare module "@prismicio/client" {
       ProjectHeroSliceDefaultPrimary,
       ProjectHeroSliceVariation,
       ProjectHeroSliceDefault,
+      ProjectsGridSlice,
+      ProjectsGridSliceDefaultItem,
+      ProjectsGridSliceVariation,
+      ProjectsGridSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
