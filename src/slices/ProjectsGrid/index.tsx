@@ -21,11 +21,6 @@ const ProjectsGrid = ({ slice }: ProjectsGridProps): JSX.Element => {
       <div className={"mx-auto w-full max-w-screen-xl"}>
         <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:grid-flow-row-dense">
           {slice.items.map((el, index) => {
-            console.log(
-              "🚀 ~ file: index.tsx:23 ~ {slice.items.map ~ el:",
-              el.accent
-            )
-
             const linkExist = el.project_link.link_type !== "Any"
 
             return linkExist ? (
