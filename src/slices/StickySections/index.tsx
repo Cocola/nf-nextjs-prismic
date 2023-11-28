@@ -33,10 +33,10 @@ const StickySections = ({ slice }: StickySectionsProps): JSX.Element => {
               <div
                 key={index}
                 className={clsx(
-                  "py-4 max-md:mr-16 max-md:snap-start max-md:shrink-0 "
+                  "py-4 max-md:mr-8 max-md:snap-start max-md:shrink-0 "
                 )}
               >
-                <div className="max-md:flex md:grid md:grid-cols-2 gap-16 md:gap-32">
+                <div className="max-md:flex max-md:flex-col max-md:gap-6 md:grid md:grid-cols-2 gap-16 md:gap-32">
                   <div className="max-md:w-[60vw]">
                     <div className="md:min-h-screen flex flex-col justify-center ">
                       <div className="flex flex-col gap-4">
@@ -65,7 +65,7 @@ const StickySections = ({ slice }: StickySectionsProps): JSX.Element => {
                   </div>
                   <div className="md:min-h-screen">
                     <PrismicImage
-                      className="rounded-xl max-md:w-[60vw] md:sticky top-16"
+                      className="rounded-xl max-md:h-[30vh] max-md:w-auto md:sticky top-16"
                       field={el.image}
                     />
                   </div>
