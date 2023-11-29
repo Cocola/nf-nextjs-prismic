@@ -23,7 +23,6 @@ export default async function Header() {
             />
           </svg>
           <Navigation data={nav.data} />
-          <ModeToggle />
         </div>
       </div>
     </header>
