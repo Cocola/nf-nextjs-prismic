@@ -1,3 +1,4 @@
+"use client"
 import type { Content } from "@prismicio/client"
 import {
   PrismicRichText,
@@ -6,6 +7,7 @@ import {
   PrismicLink,
 } from "@prismicio/react"
 import styles from "./index.module.css"
+import { motion } from "framer-motion"
 
 const components: JSXMapSerializer = {
   label: ({ node, children }) => {
@@ -57,10 +59,15 @@ export default function RichText({ slice }: RichTextProps) {
     <section className="px-6 py-16 md:py-32">
       <div className={"mx-auto w-full max-w-xl"}>
         <div className={`${styles.animate}`}>
-          <PrismicRichText
-            field={slice.primary.content}
-            components={components}
-          />
+          <motion.div
+            initial={{ opacity: 0, transform: "translateY(100px)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0)" }}
+          >
+            <PrismicRichText
+              field={slice.primary.content}
+              components={components}
+            />
+          </motion.div>
         </div>
       </div>
     </section>
