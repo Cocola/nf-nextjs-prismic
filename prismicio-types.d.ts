@@ -114,6 +114,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ProjectDocumentDataSlicesSlice =
+  | SimpleVideoSlice
   | StickySectionsSlice
   | KeyFiguresSlice
   | RichTextSlice
@@ -676,6 +677,51 @@ export type RichTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *SimpleVideo → Primary*
+ */
+export interface SimpleVideoSliceDefaultPrimary {
+  /**
+   * Source field in *SimpleVideo → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: simple_video.primary.source
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  source: prismic.LinkToMediaField;
+}
+
+/**
+ * Default variation for SimpleVideo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SimpleVideoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SimpleVideoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SimpleVideo*
+ */
+type SimpleVideoSliceVariation = SimpleVideoSliceDefault;
+
+/**
+ * SimpleVideo Shared Slice
+ *
+ * - **API ID**: `simple_video`
+ * - **Description**: SimpleVideo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SimpleVideoSlice = prismic.SharedSlice<
+  "simple_video",
+  SimpleVideoSliceVariation
+>;
+
+/**
  * Primary content in *StickySections → Primary*
  */
 export interface StickySectionsSliceDefaultPrimary {
@@ -810,6 +856,10 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      SimpleVideoSlice,
+      SimpleVideoSliceDefaultPrimary,
+      SimpleVideoSliceVariation,
+      SimpleVideoSliceDefault,
       StickySectionsSlice,
       StickySectionsSliceDefaultPrimary,
       StickySectionsSliceDefaultItem,

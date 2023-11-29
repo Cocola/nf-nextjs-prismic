@@ -21,10 +21,10 @@ const StickySections = ({ slice }: StickySectionsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx(styles.animate, "px-6 py-16 md:py-32 ")}
+      className={clsx(styles.animate, "md:px-6 py-16 md:py-32 ")}
     >
-      <div className={"mx-auto w-full max-w-screen-xl"}>
-        <h2 className="text-2xl font-bold mb-7 last:mb-0">
+      <div className={"md:mx-auto md:w-full md:max-w-screen-xl"}>
+        <h2 className="px-6 md:px-0 text-2xl font-bold mb-7 last:mb-0">
           {slice.primary.title}
         </h2>
         <div className="max-md:relative max-md:w-full max-md:flex max-md:gap-6 max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto ">
@@ -33,7 +33,7 @@ const StickySections = ({ slice }: StickySectionsProps): JSX.Element => {
               <div
                 key={index}
                 className={clsx(
-                  "py-4 max-md:mr-8 max-md:snap-start max-md:shrink-0 "
+                  "max-md:mb-4 max-md:snap-start max-md:shrink-0 p-6 md:px-0 md:py-8"
                 )}
               >
                 <div className="max-md:flex max-md:flex-col max-md:gap-6 md:grid md:grid-cols-2 gap-16 md:gap-32">
@@ -65,7 +65,7 @@ const StickySections = ({ slice }: StickySectionsProps): JSX.Element => {
                   </div>
                   <div className="md:min-h-screen">
                     <PrismicImage
-                      className="rounded-xl max-md:h-[30vh] max-md:w-auto md:sticky top-16"
+                      className="rounded-xl max-md:h-[30vh] max-md:w-auto md:sticky md:top-24 shadow-xl"
                       field={el.image}
                     />
                   </div>

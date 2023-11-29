@@ -1,0 +1,27 @@
+{
+  "id": "simple_video",
+  "type": "SharedSlice",
+  "name": "SimpleVideo",
+  "description": "SimpleVideo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "source": {
+          "type": "Link",
+          "config": {
+            "label": "Source",
+            "placeholder": "",
+            "select": "media"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

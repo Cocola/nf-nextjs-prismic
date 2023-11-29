@@ -11,6 +11,6 @@
 
 .animate {
 	animation: fadeInY linear forwards;
-	animation-timeline: view();
-  transform: translateY(20px);
+	animation-timeline: view(y 100% auto);
+  	transform: translateY(20px);
 }

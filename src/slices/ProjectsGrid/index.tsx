@@ -35,9 +35,9 @@ const ProjectsGrid = ({ slice }: ProjectsGridProps): JSX.Element => {
               >
                 <PrismicLink
                   field={el.project_link}
-                  className="flex flex-col rounded-lg overflow-hidden border border-zinc-50 relative transition-transform translate-y-0 hover:-translate-y-1"
+                  className="flex flex-col rounded-lg overflow-hidden  relative transition-transform translate-y-0 hover:-translate-y-1 shadow-xl "
                 >
-                  <PrismicNextImage field={el.project_thumb} />
+                  <PrismicNextImage field={el.project_thumb} alt="" />
                   <h3
                     className={clsx(
                       "p-4 text-l font-black absolute inset-0 top-auto z-10 text-zinc-800 bg-zinc-50/50",

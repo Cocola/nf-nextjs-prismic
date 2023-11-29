@@ -56,7 +56,6 @@ export default async function Page({ params }: { params: Params }) {
     <>
       <div className="px-6 py-2 md:py-4">
         <div className="mx-auto w-full max-w-6xl">
-          <PrismicLink href="/">Back</PrismicLink>
           <PrismicRichText field={page.data.title} components={componentsT} />
         </div>
       </div>

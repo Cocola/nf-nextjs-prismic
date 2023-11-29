@@ -1,5 +1,5 @@
 import { Content } from "@prismicio/client"
-import { PrismicLink, SliceComponentProps } from "@prismicio/react"
+import { SliceComponentProps } from "@prismicio/react"
 
 /**
  * Props for `HomeHero`.
@@ -45,22 +45,6 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
               <h3 className="text-s md:text-xl font-bold">
                 {slice.primary.past_position_subtitle}
               </h3>
-            </div>
-            <div>
-              <PrismicLink
-                field={slice.primary.project_link}
-                className="underline decoration-1 underline-offset-2"
-              >
-                {slice.primary.project_link_label}
-              </PrismicLink>
-            </div>
-            <div>
-              <PrismicLink
-                field={slice.primary.linkedin_link}
-                className="underline decoration-1 underline-offset-2 after:content-['_↗']"
-              >
-                {slice.primary.linkedin_link_label}
-              </PrismicLink>
             </div>
           </div>
         </div>

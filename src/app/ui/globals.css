@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[data-oembed-type] iframe{
+    height: auto;
+    position: relative;
+    @apply max-w-7xl;
+    @apply rounded-xl;
+    @apply w-[80vw];
+    @apply left-1/2;
+    @apply -translate-x-1/2;
+    @apply aspect-video;
+}

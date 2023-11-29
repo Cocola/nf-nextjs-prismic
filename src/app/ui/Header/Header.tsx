@@ -7,7 +7,7 @@ export default async function Header() {
   const nav = await client.getSingle("navigation")
 
   return (
-    <header className="px-6 py-2 md:py-4">
+    <header className="px-6 py-2 md:py-4 fixed top-0 left-0 right-0 backdrop-blur-sm z-20">
       <div className="mx-auto w-full max-w-6xl">
         <div className="flex justify-between items-center">
           <svg

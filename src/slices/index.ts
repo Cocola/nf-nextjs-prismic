@@ -9,5 +9,6 @@ export const components = {
   project_hero: dynamic(() => import("./ProjectHero")),
   projects_grid: dynamic(() => import("./ProjectsGrid")),
   rich_text: dynamic(() => import("./RichText")),
+  simple_video: dynamic(() => import("./SimpleVideo")),
   sticky_sections: dynamic(() => import("./StickySections")),
 };

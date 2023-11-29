@@ -26,7 +26,7 @@ export default function RootLayout({
       >
         <div className="min-h-screen flex flex-col gap-3 justify-between bg-transparent dark:bg-[radial-gradient(#111_1px,transparent_1px)] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
           <Header />
-          <main>{children}</main>
+          <main className="mt-24">{children}</main>
           <Footer />
         </div>
         <PrismicPreview repositoryName={repositoryName} />
