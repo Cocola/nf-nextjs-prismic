@@ -1,7 +1,9 @@
+"use client"
 import { Content } from "@prismicio/client"
 import { PrismicNextImage } from "@prismicio/next"
 import { PrismicLink, SliceComponentProps } from "@prismicio/react"
 import clsx from "clsx"
+import { motion } from "framer-motion"
 
 /**
  * Props for `ProjectsGrid`.
@@ -23,37 +25,43 @@ const ProjectsGrid = ({ slice }: ProjectsGridProps): JSX.Element => {
           {slice.items.map((el, index) => {
             const linkExist = el.project_link.link_type !== "Any"
 
-            return linkExist ? (
-              <div
+            return (
+              <motion.div
                 key={index}
+                transition={{ delay: index * 0.25 }}
+                initial={{ opacity: 0, transform: "translateY(-10px)" }}
+                animate={{ opacity: 1, transform: "translateY(0)" }}
                 className={clsx(
-                  "rounded-2xl dark:bg-zinc-800",
                   el.accent
                     ? "md:col-span-2 row-span-2 border-primary"
                     : "md:col-span-1"
                 )}
               >
-                <PrismicLink
-                  field={el.project_link}
-                  className="flex flex-col rounded-lg overflow-hidden  relative transition-transform translate-y-0 hover:-translate-y-1 shadow-xl "
-                >
-                  <PrismicNextImage field={el.project_thumb} alt="" />
-                  <h3
-                    className={clsx(
-                      "p-4 text-l font-black absolute inset-0 top-auto z-10 text-zinc-800 bg-zinc-50/50",
-                      el.accent ? "p-8 md:text-3xl" : "md:text-xl"
-                    )}
-                  >
-                    {el.project_title}
-                  </h3>
-                </PrismicLink>
-              </div>
-            ) : (
-              <div key={index} className={"py-8 "}>
-                <h3 className="p-4 text-l md:text-xl font-black">
-                  {el.project_title}
-                </h3>
-              </div>
+                {linkExist ? (
+                  <div className={clsx("rounded-2xl dark:bg-zinc-800")}>
+                    <PrismicLink
+                      field={el.project_link}
+                      className="flex flex-col rounded-lg overflow-hidden  relative transition-transform translate-y-0 hover:-translate-y-1 shadow-xl "
+                    >
+                      <PrismicNextImage field={el.project_thumb} alt="" />
+                      <h3
+                        className={clsx(
+                          "p-4 text-l font-black absolute inset-0 top-auto z-10 text-zinc-800 bg-zinc-50/50",
+                          el.accent ? "p-8 md:text-3xl" : "md:text-xl"
+                        )}
+                      >
+                        {el.project_title}
+                      </h3>
+                    </PrismicLink>
+                  </div>
+                ) : (
+                  <div key={index} className={"py-8 "}>
+                    <h3 className="p-4 text-l md:text-xl font-black">
+                      {el.project_title}
+                    </h3>
+                  </div>
+                )}
+              </motion.div>
             )
           })}
         </div>
