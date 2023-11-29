@@ -14,7 +14,7 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="px-6 py-2 md:py-4"
+      className="px-6 py-2 md:py-4 min-h-[70dvh] flex flex-col justify-center"
     >
       <div className="mx-auto w-full max-w-6xl">
         <div className="flex flex-col gap-6 justify-between">
