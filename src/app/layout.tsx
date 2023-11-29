@@ -18,7 +18,15 @@ export default function RootLayout({
           rel="icon"
           type="image/png"
           sizes="any"
-          href="https://prismic.io/favicon.ico"
+          href="favicon_light.png"
+          media="(prefers-color-scheme: light)"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="any"
+          href="favicon_dark.png"
+          media="(prefers-color-scheme: dark)"
         />
       </head>
       <body
