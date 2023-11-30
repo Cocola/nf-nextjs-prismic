@@ -1,3 +1,4 @@
+"use client"
 import { Content } from "@prismicio/client"
 import {
   PrismicImage,
@@ -5,7 +6,7 @@ import {
   SliceComponentProps,
 } from "@prismicio/react"
 import clsx from "clsx"
-import styles from "./index.module.css"
+import { motion } from "framer-motion"
 
 /**
  * Props for `StickySections`.
@@ -18,10 +19,13 @@ export type StickySectionsProps =
  */
 const StickySections = ({ slice }: StickySectionsProps): JSX.Element => {
   return (
-    <section
+    <motion.section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx(styles.animate, "md:px-6 py-16 md:py-32 ")}
+      className={clsx("md:px-6 py-16 md:py-32 ")}
+      initial={{ opacity: 0, transform: "translateY(100px)" }}
+      whileInView={{ opacity: 1, transform: "translateY(0)" }}
+      viewport={{ once: true }}
     >
       <div className={"md:mx-auto md:w-full md:max-w-screen-xl"}>
         <h2 className="px-6 md:px-0 text-2xl font-bold mb-7 last:mb-0">
@@ -75,7 +79,7 @@ const StickySections = ({ slice }: StickySectionsProps): JSX.Element => {
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

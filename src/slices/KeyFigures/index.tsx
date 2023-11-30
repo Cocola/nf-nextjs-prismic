@@ -1,7 +1,9 @@
+"use client"
 import { Content } from "@prismicio/client"
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react"
 import clsx from "clsx"
 import styles from "./index.module.css"
+import { motion } from "framer-motion"
 /**
  * Props for `KeyFigures`.
  */
@@ -24,13 +26,17 @@ const KeyFigures = ({ slice }: KeyFiguresProps): JSX.Element => {
         <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:grid-flow-row-dense">
           {slice.items.map((el, index) => {
             return (
-              <div
+              <motion.div
                 key={index}
                 className={clsx(
                   "p-8 rounded-2xl dark:text-zinc-800",
                   el.accent ? "md:col-span-2 bg-primary-light" : "bg-zinc-200",
                   styles.animate
                 )}
+                transition={{ delay: index * 0.15 }}
+                initial={{ opacity: 0, transform: "translateY(-10px)" }}
+                whileInView={{ opacity: 1, transform: "translateY(0)" }}
+                viewport={{ once: true }}
               >
                 <h3 className="text-6xl md:text-9xl font-black">
                   {el.figure}{" "}
@@ -39,7 +45,7 @@ const KeyFigures = ({ slice }: KeyFiguresProps): JSX.Element => {
                   </span>
                 </h3>
                 <PrismicRichText field={el.figure_description} />
-              </div>
+              </motion.div>
             )
           })}
         </div>

@@ -62,6 +62,7 @@ export default function RichText({ slice }: RichTextProps) {
           <motion.div
             initial={{ opacity: 0, transform: "translateY(100px)" }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
+            viewport={{ once: true }}
           >
             <PrismicRichText
               field={slice.primary.content}
