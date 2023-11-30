@@ -1,11 +1,15 @@
 @keyframes translate0 {
 	to {
-		transform: translateX(-33%);
+		transform: translateX(-300vw);
 	}
 }
-
 .animate {
-	animation: translate0 linear forwards;
-	animation-timeline: scroll(block root);
-    transform: translateX(33%);
-}
+	transform: translateX(30vw);
+}	
+
+@supports (animation-timeline: scroll()) {
+	.animate {
+		animation: translate0 linear forwards;
+		animation-timeline: scroll(block root);
+	}	
+  }
