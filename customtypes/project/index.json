@@ -24,6 +24,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "projects_nav": {
+              "type": "SharedSlice"
+            },
             "simple_video": {
               "type": "SharedSlice"
             },

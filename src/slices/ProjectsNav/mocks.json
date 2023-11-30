@@ -1,0 +1,43 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"previous_label": {
+				"__TYPE__": "FieldContent",
+				"value": "attack",
+				"type": "Text"
+			},
+			"previous_project_name": {
+				"__TYPE__": "FieldContent",
+				"value": "purpose",
+				"type": "Text"
+			},
+			"previous_project_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"next_label": {
+				"__TYPE__": "FieldContent",
+				"value": "apartment",
+				"type": "Text"
+			},
+			"next_project_name": {
+				"__TYPE__": "FieldContent",
+				"value": "tree",
+				"type": "Text"
+			},
+			"next_project_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			}
+		},
+		"items": []
+	}
+]

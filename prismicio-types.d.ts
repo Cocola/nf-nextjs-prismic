@@ -114,6 +114,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ProjectDocumentDataSlicesSlice =
+  | ProjectsNavSlice
   | SimpleVideoSlice
   | StickySectionsSlice
   | KeyFiguresSlice
@@ -632,6 +633,101 @@ export type ProjectsGridSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ProjectsNav → Primary*
+ */
+export interface ProjectsNavSliceDefaultPrimary {
+  /**
+   * Previous label field in *ProjectsNav → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_nav.primary.previous_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  previous_label: prismic.KeyTextField;
+
+  /**
+   * Previous Project name field in *ProjectsNav → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_nav.primary.previous_project_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  previous_project_name: prismic.KeyTextField;
+
+  /**
+   * Previous Project link field in *ProjectsNav → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_nav.primary.previous_project_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  previous_project_link: prismic.LinkField;
+
+  /**
+   * Next label field in *ProjectsNav → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_nav.primary.next_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  next_label: prismic.KeyTextField;
+
+  /**
+   * Next Project name field in *ProjectsNav → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_nav.primary.next_project_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  next_project_name: prismic.KeyTextField;
+
+  /**
+   * Next Project link field in *ProjectsNav → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_nav.primary.next_project_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  next_project_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for ProjectsNav Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsNavSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectsNavSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ProjectsNav*
+ */
+type ProjectsNavSliceVariation = ProjectsNavSliceDefault;
+
+/**
+ * ProjectsNav Shared Slice
+ *
+ * - **API ID**: `projects_nav`
+ * - **Description**: ProjectsNav
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsNavSlice = prismic.SharedSlice<
+  "projects_nav",
+  ProjectsNavSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -852,6 +948,10 @@ declare module "@prismicio/client" {
       ProjectsGridSliceDefaultItem,
       ProjectsGridSliceVariation,
       ProjectsGridSliceDefault,
+      ProjectsNavSlice,
+      ProjectsNavSliceDefaultPrimary,
+      ProjectsNavSliceVariation,
+      ProjectsNavSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

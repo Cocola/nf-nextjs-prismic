@@ -45,7 +45,7 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col gap-3 justify-between bg-transparent dark:bg-[radial-gradient(#111_1px,transparent_1px)] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
           <Header />
           <main className="mt-24">
-            <AnimatePresence onExitComplete={handleExitComplete}>
+            <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
               <motion.div
                 key={pathname}
                 initial={{ opacity: 0 }}

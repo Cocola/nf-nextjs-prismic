@@ -8,6 +8,7 @@ export const components = {
   navigation_item: dynamic(() => import("./NavigationItem")),
   project_hero: dynamic(() => import("./ProjectHero")),
   projects_grid: dynamic(() => import("./ProjectsGrid")),
+  projects_nav: dynamic(() => import("./ProjectsNav")),
   rich_text: dynamic(() => import("./RichText")),
   simple_video: dynamic(() => import("./SimpleVideo")),
   sticky_sections: dynamic(() => import("./StickySections")),
