@@ -5,13 +5,13 @@
 		"primary": {
 			"previous_label": {
 				"__TYPE__": "FieldContent",
-				"value": "attack",
-				"type": "Text"
+				"type": "Text",
+				"value": "Previous"
 			},
 			"previous_project_name": {
 				"__TYPE__": "FieldContent",
-				"value": "purpose",
-				"type": "Text"
+				"type": "Text",
+				"value": "Previous project name"
 			},
 			"previous_project_link": {
 				"__TYPE__": "LinkContent",
@@ -22,13 +22,13 @@
 			},
 			"next_label": {
 				"__TYPE__": "FieldContent",
-				"value": "apartment",
-				"type": "Text"
+				"type": "Text",
+				"value": "Next"
 			},
 			"next_project_name": {
 				"__TYPE__": "FieldContent",
-				"value": "tree",
-				"type": "Text"
+				"type": "Text",
+				"value": "Next project name"
 			},
 			"next_project_link": {
 				"__TYPE__": "LinkContent",
