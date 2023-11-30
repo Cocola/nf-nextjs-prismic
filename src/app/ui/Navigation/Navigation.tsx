@@ -9,7 +9,7 @@ export const Navigation = ({ data }: any) => {
 
   return (
     <nav>
-      <ul className="flex gap-8">
+      <ul className="flex gap-8 transition-opacity opacity-80 hover:opacity-100">
         {data.slices.map((item: any) => {
           // Fix TS Prismic link management. see: https://community.prismic.io/t/how-to-get-url-from-link-in-typescript-next-js-project/12270/4
           const url = asLink(item.primary.link) as string
@@ -23,11 +23,11 @@ export const Navigation = ({ data }: any) => {
             <li
               key={JSON.stringify(item)}
               className={clsx(
-                "text-xs md:text-base",
-                currentCat && "underline underline-offset-4"
+                "text-xs md:text-base font-semibold block transition-opacity opacity-80 hover:opacity-100",
+                currentCat && "underline underline-offset-8 opacity-100"
               )}
             >
-              <PrismicLink field={item.primary.link}>
+              <PrismicLink field={item.primary.link} aria-current={currentCat}>
                 {item.primary.name}
               </PrismicLink>
             </li>
