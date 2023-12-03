@@ -1,7 +1,7 @@
 "use client"
 import clsx from "clsx"
 import { useState, useEffect } from "react"
-import { useColorScheme } from "../../../hooks/useColorScheme"
+import { useColorScheme } from "../../hooks/useColorScheme"
 import { BiMoon, BiSun } from "react-icons/bi"
 import { useMediaQuery } from "react-responsive"
 import { useLocalStorage } from "react-use"

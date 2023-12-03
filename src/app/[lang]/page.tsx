@@ -14,9 +14,13 @@ import { components } from "@/slices"
  * Use the SliceZone to render the content of the page.
  */
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: string }
+}): Promise<Metadata> {
   const client = createClient()
-  const home = await client.getByUID("page", "home")
+  const home = await client.getByUID("page", "home", { lang })
 
   return {
     title: prismic.asText(home.data.title),
@@ -32,12 +36,16 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function Index() {
+export default async function Index({
+  params: { lang },
+}: {
+  params: { lang: string }
+}) {
   /**
    * The client queries content from the Prismic API
    */
   const client = createClient()
-  const home = await client.getByUID("page", "home")
+  const home = await client.getByUID("page", "home", { lang })
 
   return (
     <>

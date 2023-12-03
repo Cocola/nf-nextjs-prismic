@@ -20,7 +20,7 @@ const componentsT: JSXMapSerializer = {
   ),
 }
 
-type Params = { uid: string }
+type Params = { uid: string; lang: string }
 
 /**
  * This page renders a Prismic Document dynamically based on the URL.
@@ -32,7 +32,9 @@ export async function generateMetadata({
   params: Params
 }): Promise<Metadata> {
   const client = createClient()
-  const page = await client.getByUID("page", params.uid).catch(() => notFound())
+  const page = await client
+    .getByUID("page", params.uid, { lang: params.lang })
+    .catch(() => notFound())
 
   return {
     title: prismic.asText(page.data.title),
@@ -50,7 +52,9 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient()
-  const page = await client.getByUID("page", params.uid).catch(() => notFound())
+  const page = await client
+    .getByUID("page", params.uid, { lang: params.lang })
+    .catch(() => notFound())
 
   return (
     <>
@@ -72,12 +76,11 @@ export async function generateStaticParams() {
    */
   const pages = await client.getAllByType("page", {
     predicates: [prismic.filter.not("my.page.uid", "home")],
+    lang: "*",
   })
 
   /**
    * Define a path for every Document.
    */
-  return pages.map((page) => {
-    return { uid: page.uid }
-  })
+  return pages.map((page) => ({ uid: page.uid, lang: page.lang })
 }
