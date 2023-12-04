@@ -1,10 +1,25 @@
 import { createClient } from "@/prismicio"
 import { ModeToggle } from "../ModeToggle/ModeToggle"
 import { Navigation } from "../Navigation/Navigation"
+import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher"
 
-export default async function Header() {
+interface LanguageSwitcherProps {
+  locales: {
+    lang: string
+    lang_name: string
+    url: string
+  }[]
+}
+
+export default async function Header({
+  locales,
+  lang,
+}: {
+  locales: any
+  lang: string
+}) {
   const client = createClient()
-  const nav = await client.getSingle("navigation")
+  const nav = await client.getSingle("navigation", { lang: lang })
 
   return (
     <header className="px-6 py-2 md:py-4 fixed top-0 left-0 right-0 backdrop-blur-sm z-20">
@@ -23,6 +38,7 @@ export default async function Header() {
             />
           </svg>
           <Navigation data={nav.data} />
+          <LanguageSwitcher locales={locales} />
         </div>
       </div>
     </header>

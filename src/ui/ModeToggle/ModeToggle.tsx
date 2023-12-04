@@ -1,7 +1,7 @@
 "use client"
 import clsx from "clsx"
 import { useState, useEffect } from "react"
-import { useColorScheme } from "../../../hooks/useColorScheme"
+import { useColorScheme } from "../../hooks/useColorScheme"
 import { BiMoon, BiSun } from "react-icons/bi"
 import { useMediaQuery } from "react-responsive"
 import { useLocalStorage } from "react-use"
@@ -16,11 +16,7 @@ export const ModeToggle = () => {
     undefined
   )
   const [isDark, setIsDark] = useState(systemPrefersDark)
-  console.log("🚀 ~ file: ModeToggle.tsx:16 ~ ModeToggle ~ isDark:", isDark)
-
   const [theme, setTheme, remove] = useLocalStorage(COLOR_SCHEME, isDark)
-  console.log("🚀 ~ file: ModeToggle.tsx:22 ~ ModeToggle ~ theme:", theme)
-
   const [isClient, setIsClient] = useState(false)
 
   const handleDarkToggle = () => {

@@ -1,13 +1,12 @@
 "use client"
 import { PrismicPreview } from "@prismicio/next"
 import { repositoryName } from "@/prismicio"
-import { AnimatePresence, Spring, motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { usePathname } from "next/navigation"
 
-import "./ui/globals.css"
-import { dmsans } from "./ui/fonts"
-import Header from "./ui/Header/Header"
-import { Footer } from "./ui/Footer/Footer"
+import "../ui/globals.css"
+import { dmsans } from "../ui/fonts"
+import { Footer } from "../ui/Footer/Footer"
 
 function handleExitComplete() {
   if (typeof window !== "undefined") {
@@ -21,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
+
   return (
     <html lang="en" id="colorScheme-root">
       <head>
@@ -43,8 +43,7 @@ export default function RootLayout({
         className={`${dmsans.className} antialiased min-h-screen bg-zinc-100  text-zinc-900 dark:bg-zinc-800 dark:text-zinc-300`}
       >
         <div className="min-h-screen flex flex-col gap-3 justify-between bg-transparent dark:bg-[radial-gradient(#111_1px,transparent_1px)] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
-          <Header />
-          <main className="mt-24">
+          <div className="mt-24">
             <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
               <motion.div
                 key={pathname}
@@ -55,7 +54,7 @@ export default function RootLayout({
                 {children}
               </motion.div>
             </AnimatePresence>
-          </main>
+          </div>
           <Footer />
         </div>
         <PrismicPreview repositoryName={repositoryName} />

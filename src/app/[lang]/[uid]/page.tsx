@@ -11,6 +11,9 @@ import * as prismic from "@prismicio/client"
 
 import { createClient } from "@/prismicio"
 import { components } from "@/slices"
+import { getLocales } from "@/lib/getLocales"
+import { LanguageSwitcher } from "@/ui/LanguageSwitcher/LanguageSwitcher"
+import Header from "@/ui/Header/Header"
 
 const componentsT: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -20,7 +23,7 @@ const componentsT: JSXMapSerializer = {
   ),
 }
 
-type Params = { uid: string }
+type Params = { uid: string; lang: string }
 
 /**
  * This page renders a Prismic Document dynamically based on the URL.
@@ -32,7 +35,9 @@ export async function generateMetadata({
   params: Params
 }): Promise<Metadata> {
   const client = createClient()
-  const page = await client.getByUID("page", params.uid).catch(() => notFound())
+  const page = await client
+    .getByUID("page", params.uid, { lang: params.lang })
+    .catch(() => notFound())
 
   return {
     title: prismic.asText(page.data.title),
@@ -50,10 +55,14 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient()
-  const page = await client.getByUID("page", params.uid).catch(() => notFound())
+  const page = await client
+    .getByUID("page", params.uid, { lang: params.lang })
+    .catch(() => notFound())
+  const locales = await getLocales(page, client)
 
   return (
     <>
+      <Header locales={locales} lang={params.lang} />
       <div className="px-6 py-2 md:py-4">
         <div className="mx-auto w-full max-w-6xl">
           <PrismicRichText field={page.data.title} components={componentsT} />
@@ -72,12 +81,11 @@ export async function generateStaticParams() {
    */
   const pages = await client.getAllByType("page", {
     predicates: [prismic.filter.not("my.page.uid", "home")],
+    lang: "*",
   })
 
   /**
    * Define a path for every Document.
    */
-  return pages.map((page) => {
-    return { uid: page.uid }
-  })
+  return pages.map((page) => ({ uid: page.uid, lang: page.lang }))
 }

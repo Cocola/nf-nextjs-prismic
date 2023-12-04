@@ -4,17 +4,21 @@ import { PrismicLink, SliceZone } from "@prismicio/react"
 
 import { createClient } from "@/prismicio"
 import { components } from "@/slices"
+import { getLocales } from "@/lib/getLocales"
+import Header from "@/ui/Header/Header"
 
-type Params = { uid: string }
+type Params = { uid: string; lang: string }
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient()
   const page = await client
-    .getByUID("project", params.uid)
+    .getByUID("project", params.uid, { lang: params.lang })
     .catch(() => notFound())
+  const locales = await getLocales(page, client)
 
   return (
     <>
+      <Header locales={locales} lang={params.lang} />
       <div className="px-6 py-2 md:py-4">
         <div className="mx-auto w-full max-w-6xl">
           <PrismicLink href="/projects">Back</PrismicLink>
@@ -35,7 +39,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const client = createClient()
   const page = await client
-    .getByUID("project", params.uid)
+    .getByUID("project", params.uid, { lang: params.lang })
     .catch(() => notFound())
 
   return {
@@ -46,9 +50,7 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const client = createClient()
-  const pages = await client.getAllByType("project")
+  const pages = await client.getAllByType("project", { lang: "*" })
 
-  return pages.map((page) => {
-    return { uid: page.uid }
-  })
+  return pages.map((page) => ({ uid: page.uid, lang: page.lang }))
 }
