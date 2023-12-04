@@ -11,13 +11,8 @@ export const Navigation = ({ data }: any) => {
     <nav>
       <ul className="flex gap-8 transition-opacity opacity-80 hover:opacity-100">
         {data.slices.map((item: any) => {
-          // Fix TS Prismic link management. see: https://community.prismic.io/t/how-to-get-url-from-link-in-typescript-next-js-project/12270/4
           const url = asLink(item.primary.link) as string
-          const urlParts = pathname.split("/").slice(1)
-          const currentCat =
-            urlParts.length > 1
-              ? pathname.includes(`/${url.slice(1)}/`)
-              : url === pathname
+          const currentCat = url === pathname
 
           return (
             <li

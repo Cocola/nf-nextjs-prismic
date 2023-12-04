@@ -11,6 +11,9 @@ import * as prismic from "@prismicio/client"
 
 import { createClient } from "@/prismicio"
 import { components } from "@/slices"
+import { getLocales } from "@/lib/getLocales"
+import { LanguageSwitcher } from "@/ui/LanguageSwitcher/LanguageSwitcher"
+import Header from "@/ui/Header/Header"
 
 const componentsT: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -55,9 +58,11 @@ export default async function Page({ params }: { params: Params }) {
   const page = await client
     .getByUID("page", params.uid, { lang: params.lang })
     .catch(() => notFound())
+  const locales = await getLocales(page, client)
 
   return (
     <>
+      <Header locales={locales} lang={params.lang} />
       <div className="px-6 py-2 md:py-4">
         <div className="mx-auto w-full max-w-6xl">
           <PrismicRichText field={page.data.title} components={componentsT} />
@@ -82,5 +87,5 @@ export async function generateStaticParams() {
   /**
    * Define a path for every Document.
    */
-  return pages.map((page) => ({ uid: page.uid, lang: page.lang })
+  return pages.map((page) => ({ uid: page.uid, lang: page.lang }))
 }
