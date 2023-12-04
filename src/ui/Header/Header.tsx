@@ -18,8 +18,6 @@ export default async function Header({
   locales: any
   lang: string
 }) {
-  console.log("🚀 ~ file: Header.tsx:21 ~ lang:", lang)
-
   const client = createClient()
   const nav = await client.getSingle("navigation", { lang: lang })
 
