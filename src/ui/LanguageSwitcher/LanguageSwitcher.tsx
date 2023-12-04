@@ -17,7 +17,6 @@ const localeLabels = {
 
 export const LanguageSwitcher = ({ locales }: LanguageSwitcherProps) => (
   <div className="flex flex-wrap gap-3">
-    <span aria-hidden>🌐</span>
     <ul className="flex flex-wrap gap-3">
       {locales.map((locale) => (
         <li key={locale.lang} className="first:font-semibold">
