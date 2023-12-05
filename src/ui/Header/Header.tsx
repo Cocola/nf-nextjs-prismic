@@ -1,9 +1,14 @@
 import { createClient } from "@/prismicio"
-import { ModeToggle } from "../ModeToggle/ModeToggle"
 import { Navigation } from "../Navigation/Navigation"
-import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher"
+import { PrismicNextLink } from "@prismicio/next"
 
-interface LanguageSwitcherProps {
+const localeLabels = {
+  "en-us": "EN",
+  "fr-fr": "FR",
+}
+
+interface HeaderProps {
+  lang: string
   locales: {
     lang: string
     lang_name: string
@@ -11,13 +16,7 @@ interface LanguageSwitcherProps {
   }[]
 }
 
-export default async function Header({
-  locales,
-  lang,
-}: {
-  locales: any
-  lang: string
-}) {
+export default async function Header({ locales, lang }: HeaderProps) {
   const client = createClient()
   const nav = await client.getSingle("navigation", { lang: lang })
 
@@ -38,7 +37,22 @@ export default async function Header({
             />
           </svg>
           <Navigation data={nav.data} />
-          <LanguageSwitcher locales={locales} />
+          <div className="flex flex-wrap gap-3">
+            <ul className="flex flex-wrap gap-3">
+              {locales.map((locale) => (
+                <li key={locale.lang} className="first:font-semibold">
+                  <PrismicNextLink
+                    href={locale.url}
+                    locale={locale.lang}
+                    aria-label={`Change language to ${locale.lang_name}`}
+                  >
+                    {localeLabels[locale.lang as keyof typeof localeLabels] ||
+                      locale.lang}
+                  </PrismicNextLink>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </header>
