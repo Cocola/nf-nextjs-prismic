@@ -12,7 +12,6 @@ import * as prismic from "@prismicio/client"
 import { createClient } from "@/prismicio"
 import { components } from "@/slices"
 import { getLocales } from "@/lib/getLocales"
-import { LanguageSwitcher } from "@/ui/LanguageSwitcher/LanguageSwitcher"
 import Header from "@/ui/Header/Header"
 
 const componentsT: JSXMapSerializer = {
