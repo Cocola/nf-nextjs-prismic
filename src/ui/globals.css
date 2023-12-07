@@ -12,3 +12,9 @@
     @apply -translate-x-1/2;
     @apply aspect-video;
 }
+
+*:focus-visible {
+    @apply outline-dashed;
+    @apply outline-2;
+    @apply outline-offset-2;
+}
