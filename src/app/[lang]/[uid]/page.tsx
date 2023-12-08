@@ -79,7 +79,7 @@ export async function generateStaticParams() {
    * Query all Documents from the API, except the homepage.
    */
   const pages = await client.getAllByType("page", {
-    predicates: [prismic.filter.not("my.page.uid", "home")],
+    filters: [prismic.filter.not("my.page.uid", "home")],
     lang: "*",
   })
 

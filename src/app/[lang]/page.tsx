@@ -57,3 +57,18 @@ export default async function Index({
     </>
   )
 }
+
+export async function generateStaticParams() {
+  const client = createClient()
+
+  const pages = await client.getAllByType("page", {
+    lang: "*",
+    filters: [prismic.filter.at("my.page.uid", "home")],
+  })
+
+  return pages.map((page) => {
+    return {
+      lang: page.lang,
+    }
+  })
+}
