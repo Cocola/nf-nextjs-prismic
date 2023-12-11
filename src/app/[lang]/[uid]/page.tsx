@@ -1,12 +1,7 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import {
-  JSXMapSerializer,
-  PrismicLink,
-  PrismicRichText,
-  SliceZone,
-} from "@prismicio/react"
+import { JSXMapSerializer, PrismicRichText, SliceZone } from "@prismicio/react"
 import * as prismic from "@prismicio/client"
 
 import { createClient } from "@/prismicio"
@@ -79,8 +74,8 @@ export async function generateStaticParams() {
    * Query all Documents from the API, except the homepage.
    */
   const pages = await client.getAllByType("page", {
-    filters: [prismic.filter.not("my.page.uid", "home")],
     lang: "*",
+    filters: [prismic.filter.not("my.page.uid", "home")],
   })
 
   /**
