@@ -3,6 +3,7 @@ import { PrismicPreview } from "@prismicio/next"
 import { repositoryName } from "@/prismicio"
 import { AnimatePresence, motion } from "framer-motion"
 import { usePathname } from "next/navigation"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "../ui/globals.css"
 import { dmsans } from "../ui/fonts"
@@ -58,6 +59,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <PrismicPreview repositoryName={repositoryName} />
+        <SpeedInsights />
       </body>
     </html>
   )
