@@ -9,7 +9,7 @@ export const Navigation = ({ data }: any) => {
 
   return (
     <nav>
-      <ul className="flex gap-8 transition-opacity opacity-80 hover:opacity-100">
+      <ul className="flex gap-4 md:gap-8 transition-opacity opacity-80 hover:opacity-100">
         {data.slices.map((item: any) => {
           const url = asLink(item.primary.link) as string
           const currentCat = url === pathname
