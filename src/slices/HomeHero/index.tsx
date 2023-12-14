@@ -1,6 +1,6 @@
 "use client"
 import { Content } from "@prismicio/client"
-import { SliceComponentProps } from "@prismicio/react"
+import { PrismicLink, SliceComponentProps } from "@prismicio/react"
 import { motion } from "framer-motion"
 
 /**
@@ -62,6 +62,14 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
               <h3 className="text-s md:text-xl font-bold">
                 {slice.primary.past_position_subtitle}
               </h3>
+            </div>
+            <div>
+              <PrismicLink
+                field={slice.primary.project_link}
+                className="relative before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:w-0 hover:before:w-full hover:before:duration-200 before:bg-current"
+              >
+                {slice.primary.project_link_label}&nbsp;→
+              </PrismicLink>
             </div>
           </motion.div>
         </div>
