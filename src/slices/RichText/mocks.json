@@ -7,20 +7,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading2",
-						"content": {
-							"text": "Introduction title",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
 						"type": "paragraph",
 						"content": {
-							"text": "Esse aliqua qui in qui duis nisi. Esse elit elit culpa cillum dolore eiusmod aliquip deserunt.",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Amet elit occaecat anim amet duis occaecat anim nulla quis."
+						}
 					}
 				]
 			}

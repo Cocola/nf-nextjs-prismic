@@ -18,3 +18,10 @@
     @apply outline-2;
     @apply outline-offset-2;
 }
+
+.block-img {
+    @apply mb-7;
+    @apply rounded-xl;
+    @apply overflow-hidden;
+    @apply shadow-xl;
+}
