@@ -32,18 +32,20 @@ const ProjectsGrid = ({ slice }: ProjectsGridProps): JSX.Element => {
                 initial={{ opacity: 0, transform: "translateY(-10px)" }}
                 animate={{ opacity: 1, transform: "translateY(0)" }}
                 className={clsx(
-                  el.accent
-                    ? "md:col-span-2 row-span-2 border-primary"
-                    : "md:col-span-1"
+                  el.accent ? "md:col-span-2 row-span-2" : "md:col-span-1"
                 )}
               >
                 {linkExist ? (
-                  <div className={clsx("rounded-2xl dark:bg-zinc-800")}>
+                  <div className={clsx("rounded-2xl dark:bg-zinc-800 h-full")}>
                     <PrismicLink
                       field={el.project_link}
-                      className="flex flex-col rounded-lg overflow-hidden  relative transition-transform translate-y-0 hover:-translate-y-1 shadow-xl "
+                      className="block h-full rounded-lg overflow-hidden relative transition-transform translate-y-0 hover:-translate-y-1 shadow-xl "
                     >
-                      <PrismicNextImage field={el.project_thumb} alt="" />
+                      <PrismicNextImage
+                        field={el.project_thumb}
+                        className="h-full"
+                        alt=""
+                      />
                       <h3
                         className={clsx(
                           "p-4 text-l font-black absolute inset-0 top-auto z-10 text-zinc-800 bg-zinc-50/50",
@@ -55,8 +57,11 @@ const ProjectsGrid = ({ slice }: ProjectsGridProps): JSX.Element => {
                     </PrismicLink>
                   </div>
                 ) : (
-                  <div key={index} className={"py-8 "}>
-                    <h3 className="p-4 text-l md:text-xl font-black">
+                  <div
+                    key={index}
+                    className={"h-full flex flex-col justify-end"}
+                  >
+                    <h3 className="p-4 text-l md:text-xl font-bold text-right">
                       {el.project_title}
                     </h3>
                   </div>
