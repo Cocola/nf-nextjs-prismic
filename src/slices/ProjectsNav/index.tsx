@@ -42,12 +42,12 @@ const ProjectsNav = ({ slice }: ProjectsNavProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="flex justify-between gap-10 ">
+      <div className="md:flex md:justify-between gap-10 ">
         {isPrev && (
           <div
             className={clsx(
               "p-8 transition-opacity opacity-80 hover:opacity-100",
-              isNext ? "w-1/2" : "w-full"
+              isNext ? "md:w-1/2" : "w-full"
             )}
           >
             <div className="font-light uppercase text-xs">
@@ -66,7 +66,7 @@ const ProjectsNav = ({ slice }: ProjectsNavProps): JSX.Element => {
           <div
             className={clsx(
               "p-8 transition-opacity opacity-80 hover:opacity-100 text-right",
-              isPrev ? "w-1/2" : "w-full"
+              isPrev ? "md:w-1/2" : "w-full"
             )}
           >
             <div className="font-light uppercase text-xs">

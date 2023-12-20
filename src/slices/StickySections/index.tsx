@@ -1,6 +1,7 @@
 "use client"
 import { Content } from "@prismicio/client"
 import {
+  JSXMapSerializer,
   PrismicImage,
   PrismicRichText,
   SliceComponentProps,
@@ -8,6 +9,12 @@ import {
 import clsx from "clsx"
 import { motion } from "framer-motion"
 
+const components: JSXMapSerializer = {
+  list: ({ children }) => <ul className="pl-4 mb-0 md:pl-6">{children}</ul>,
+  listItem: ({ children }) => (
+    <li className="mb-1 list-disc pl-1 last:mb-0 md:pl-2">{children}</li>
+  ),
+}
 /**
  * Props for `StickySections`.
  */
@@ -64,7 +71,10 @@ const StickySections = ({ slice }: StickySectionsProps): JSX.Element => {
                       </div>
                     </div>
                     <div className="md:min-h-[50DVH] text-xs md:text-lg">
-                      <PrismicRichText field={el.description} />
+                      <PrismicRichText
+                        field={el.description}
+                        components={components}
+                      />
                     </div>
                   </div>
                   <div className="md:min-h-screen">
