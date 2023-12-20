@@ -49,7 +49,7 @@ const ProjectsGrid = ({ slice }: ProjectsGridProps): JSX.Element => {
                       <h3
                         className={clsx(
                           "p-4 text-l font-black absolute inset-0 top-auto z-10 text-zinc-800 bg-zinc-50/50",
-                          el.accent ? "p-8 md:text-3xl" : "md:text-xl"
+                          el.accent ? "md:p-8 md:text-3xl" : "md:text-xl"
                         )}
                       >
                         {el.project_title}
