@@ -21,6 +21,7 @@
 
 .block-img {
     @apply mb-7;
+    @apply last:mb-0;
     @apply rounded-xl;
     @apply overflow-hidden;
     @apply shadow-xl;
