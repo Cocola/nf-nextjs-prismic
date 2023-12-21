@@ -32,14 +32,14 @@ export default function RootLayout({
           rel="icon"
           type="image/png"
           sizes="any"
-          href="favicon_light.png"
+          href="https://images.prismic.io/nicolasfiascaro/3d2fe9b1-f0b5-48b2-9d2b-fbc2cec56105_favicon_light.png?auto=compress,format"
           media="(prefers-color-scheme: light)"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="any"
-          href="favicon_dark.png"
+          href="https://images.prismic.io/nicolasfiascaro/50c70ab0-c986-4d04-aa9d-6ce1e046952c_favicon_dark.png?auto=compress,format"
           media="(prefers-color-scheme: dark)"
         />
       </head>
