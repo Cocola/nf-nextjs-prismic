@@ -25,12 +25,12 @@ const SimpleVideo = ({ slice }: SimpleVideoProps): JSX.Element => {
         loop
         muted
         controls={false}
+        playsInline
         className="relative w-full h-1/2 -translate-x-1/2 left-1/2 rounded-2xl max-w-screen-lg transition-transform scale-1 hover:scale-105 shadow-xl hover:shadow-2xl"
       >
         <source src={mediaDatas.url} type={mediaType} />
         <p>
-          html5 video are not supported
-          .
+          html5 video are not supported .
           <a href={mediaDatas.url} download>
             Download
           </a>
