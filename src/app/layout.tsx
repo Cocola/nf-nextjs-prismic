@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
-import Hotjar from "@hotjar/browser"
 
 import "../ui/globals.css"
 import { dmsans } from "../ui/fonts"
@@ -82,7 +81,14 @@ export default function RootLayout({
         `}
             </Script>
             <Script id="hotjar" strategy="afterInteractive">
-              {`Hotjar.init(${siteId}, ${hotjarVersion})`}
+              {`(function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:${siteId},hjsv:${hotjarVersion}};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`}
             </Script>
           </>
         )}
