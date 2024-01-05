@@ -5,12 +5,15 @@ import { AnimatePresence, motion } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
+import Hotjar from "@hotjar/browser"
 
 import "../ui/globals.css"
 import { dmsans } from "../ui/fonts"
 import { Footer } from "../ui/Footer/Footer"
 
 const GA = "G-24PVJWPTQ5"
+const siteId = 3814665
+const hotjarVersion = 6
 
 function handleExitComplete() {
   if (typeof window !== "undefined") {
@@ -63,19 +66,26 @@ export default function RootLayout({
         </div>
         <PrismicPreview repositoryName={repositoryName} />
         <SpeedInsights />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'GA_MEASUREMENT_ID');
         `}
-        </Script>
+            </Script>
+            <Script id="hotjar" strategy="afterInteractive">
+              {`Hotjar.init(${siteId}, ${hotjarVersion})`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   )
