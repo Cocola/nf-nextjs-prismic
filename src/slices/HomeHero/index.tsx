@@ -1,4 +1,5 @@
 "use client"
+import { KonamiCode } from "@/ui/KonamiCode"
 import { Content } from "@prismicio/client"
 import { PrismicLink, SliceComponentProps } from "@prismicio/react"
 import { motion } from "framer-motion"
@@ -72,6 +73,7 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
               </PrismicLink>
             </div>
           </motion.div>
+          <KonamiCode />
         </div>
       </div>
     </section>
