@@ -8,9 +8,9 @@ export const KonamiCode = () => {
   const [playAudio, setPlayAudio] = useState<Boolean>(false)
   const [altText, setAltText] = useState<string>("")
   const handleKonami = () => {
-    //setPlayAudio(true)
+    setPlayAudio(true)
     setAltText("You see my face, now goodbye 👋")
-    //setTimeout(() => setPlayAudio(false), 2000)
+    setTimeout(() => setPlayAudio(false), 2000)
     const styles = [
       "color: #4AE4B5",
       "background: #04101a",
