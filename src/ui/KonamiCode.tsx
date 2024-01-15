@@ -41,7 +41,7 @@ export const KonamiCode = () => {
         />
       </Konami>
       {playAudio && (
-        <audio id="konamiSound" controls className="srOnly" autoPlay>
+        <audio id="konamiSound" controls className="sr-only" autoPlay>
           <source
             src="https://prismic-io.s3.amazonaws.com/nicolasfiascaro/5420e267-bfe6-4ebe-a9e0-7ffef68a95ca_mk_toasty.mp3"
             type="audio/mpeg"
