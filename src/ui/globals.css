@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --konamiPosX: -75%;
+  }
+
 [data-oembed-type] iframe{
     height: auto;
     position: relative;
@@ -26,3 +30,53 @@
     @apply overflow-hidden;
     @apply shadow-xl;
 }
+
+.konami {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate3d(var(--konamiPosX), 0, 0);
+    animation: showCocola 2s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .konamiImg {
+    display: block;
+  }
+  @keyframes showCocola {
+    0% {
+      transform: translate3d(var(--konamiPosX), 100%, 0);
+    }
+    25% {
+      transform: translate3d(var(--konamiPosX), 0, 0);
+    }
+    75% {
+      transform: translate3d(var(--konamiPosX), 0, 0);
+    }
+    100% {
+      transform: translate3d(var(--konamiPosX), 100%, 0);
+    }
+  } 
+  
+  @media screen and (max-width: 1024px) {
+    :root {
+      --konamiPosX: -50%;
+      --gridSize: 3rem;
+    }
+    .btn {
+      font-size: 75%;
+    }
+    html #wcb.carbonbadge { 
+      max-width: 220px;
+    }
+    .react-toggle {
+      right: 2rem
+    }
+    .grid {
+      background-size: 2rem 2rem;
+    }
+    .konamiImg {
+      width: 200%;
+      height: 200%;
+    }
+  }
