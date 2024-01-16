@@ -4,11 +4,11 @@ export const Footer = () => {
   return (
     <footer className="px-6 py-2 md:py-4">
       <div className="mx-auto w-full max-w-6xl">
-        <div className="md:flex md:gap-2 md:justify-center">
-          <p className="m-0 text-center">
-            Design and develop by me with{" "}
+        <div className="flex flex-col gap-2 justify-center">
+          <p className="m-0 text-center text-sm">
+            Designed and developed by me with{" "}
             <a
-              className="underline hover:no-underline"
+              className="underline underline-offset-4 animate-underline hover:no-underline"
               href="https://nextjs.org/"
               target="_blank"
             >
@@ -16,7 +16,7 @@ export const Footer = () => {
             </a>{" "}
             and{" "}
             <a
-              className="underline hover:no-underline"
+              className="underline underline-offset-4 animate-underline hover:no-underline"
               href="https://tailwindcss.com/"
               target="_blank"
             >
