@@ -9,7 +9,6 @@ import Script from "next/script"
 import "../ui/globals.css"
 import { dmsans } from "../ui/fonts"
 import { Footer } from "../ui/Footer/Footer"
-import { useMemo, useState } from "react"
 
 const GA = "G-24PVJWPTQ5"
 const siteId = 3814665
@@ -60,7 +59,6 @@ export default function RootLayout({
                     exit={{ opacity: 1, display: "block" }}
                     transition={{ delay: 1 }}
                     className="bg-primary-light inset-0 absolute z-20 grid place-content-center"
-                    onAnimationComplete={() => setInitialLoad(true)}
                   >
                     <motion.div
                       className="bg-zinc-100 dark:bg-zinc-800 inset-0 absolute z-30"
