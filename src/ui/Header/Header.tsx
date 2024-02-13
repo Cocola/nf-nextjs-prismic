@@ -2,6 +2,13 @@ import { createClient } from "@/prismicio"
 import { Navigation } from "../Navigation/Navigation"
 import { PrismicNextLink } from "@prismicio/next"
 
+import dynamic from "next/dynamic"
+
+const SetThemeButton = dynamic(() => import("../ModeToggle/ModeToggle"), {
+  ssr: false,
+  loading: () => <div className="w-9 h-9" />,
+})
+
 const localeLabels = {
   "en-us": "EN",
   "fr-fr": "FR",
@@ -37,10 +44,13 @@ export default async function Header({ locales, lang }: HeaderProps) {
             />
           </svg>
           <Navigation data={nav.data} />
-          <div className="flex flex-wrap gap-3">
-            <ul className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 md:gap-4 items-center">
+            <ul className="flex flex-wrap gap-1 md:gap-3">
               {locales.map((locale) => (
-                <li key={locale.lang} className="first:font-semibold">
+                <li
+                  key={locale.lang}
+                  className="max-sm:text-sm first:font-semibold"
+                >
                   <PrismicNextLink
                     href={locale.url}
                     locale={locale.lang}
@@ -52,6 +62,7 @@ export default async function Header({ locales, lang }: HeaderProps) {
                 </li>
               ))}
             </ul>
+            <SetThemeButton />
           </div>
         </div>
       </div>
