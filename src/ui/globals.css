@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --konamiPosX: -75%;
-  }
 
+:root {
+  color-scheme: light;
+  --konamiPosX: -75%;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
 [data-oembed-type] iframe{
     height: auto;
     position: relative;

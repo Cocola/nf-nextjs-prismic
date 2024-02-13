@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
+import { getTheme } from "../lib/getTheme"
 
 import "../ui/globals.css"
 import { dmsans } from "../ui/fonts"
@@ -28,8 +29,9 @@ export default function RootLayout({
   const pathname = usePathname()
 
   return (
-    <html lang="en" id="colorScheme-root">
+    <html lang="en" id="colorScheme-root" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: getTheme }} />
         <link
           rel="icon"
           type="image/png"
