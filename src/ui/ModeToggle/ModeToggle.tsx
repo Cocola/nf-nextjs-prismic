@@ -4,6 +4,16 @@ import { useState, useEffect } from "react"
 
 import { BiMoon, BiSun } from "react-icons/bi"
 
+type Theme = "dark" | "light"
+
+declare global {
+  interface Window {
+    __theme: Theme
+    __onThemeChange: (theme: Theme) => void
+    __setPreferredTheme: (theme: Theme) => void
+  }
+}
+
 const SetTheme = () => {
   const [theme, setTheme] = useState(global.window?.__theme || "light")
 
