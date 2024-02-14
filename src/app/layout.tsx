@@ -1,8 +1,8 @@
 "use client"
+import { useEffect, useState } from "react"
 import { PrismicPreview } from "@prismicio/next"
 import { repositoryName } from "@/prismicio"
-import { AnimatePresence, motion } from "framer-motion"
-import { usePathname } from "next/navigation"
+import { motion } from "framer-motion"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
 import { getTheme } from "../lib/getTheme"
@@ -10,23 +10,24 @@ import { getTheme } from "../lib/getTheme"
 import "../ui/globals.css"
 import { dmsans } from "../ui/fonts"
 import { Footer } from "../ui/Footer/Footer"
+import AnimationLayer from "@/ui/AnimationLayer/AnimationLayer"
 
 const GA = "G-24PVJWPTQ5"
 const siteId = 3814665
 const hotjarVersion = 6
-
-function handleExitComplete() {
-  if (typeof window !== "undefined") {
-    window.scrollTo({ top: 0 })
-  }
-}
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const pathname = usePathname()
+  const [firstLoad, setFirstLoad] = useState<boolean>(false)
+  useEffect(() => {
+    if (sessionStorage.getItem("firstLoad") === null) {
+      setFirstLoad(true)
+      sessionStorage.setItem("firstLoad", "true")
+    }
+  }, [])
 
   return (
     <html lang="en" id="colorScheme-root" suppressHydrationWarning>
@@ -51,19 +52,15 @@ export default function RootLayout({
         className={`${dmsans.className} antialiased min-h-screen bg-zinc-100  text-zinc-900 dark:bg-zinc-800 dark:text-zinc-300`}
       >
         <div className="min-h-screen flex flex-col gap-3 justify-between bg-transparent dark:bg-[radial-gradient(#111_1px,transparent_1px)] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
-          <div className="mt-24">
-            <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-              <motion.div
-                key={pathname}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                {children}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-          <Footer />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="mt-24">{children}</div>
+            <Footer />
+          </motion.div>
+          {firstLoad && <AnimationLayer />}
         </div>
         <PrismicPreview repositoryName={repositoryName} />
         <SpeedInsights />
