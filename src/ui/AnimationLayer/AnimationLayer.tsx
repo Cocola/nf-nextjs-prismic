@@ -6,9 +6,8 @@ export default function AnimationLayer() {
   return (
     <motion.div
       initial={{ opacity: 1, transformOrigin: "top" }}
-      animate={{ opacity: 0, display: "none" }}
-      exit={{ opacity: 1, display: "block" }}
-      transition={{ delay: 1.5 }}
+      animate={{ opacity: [1, 0, 0], scaleY: [1, 1, 0] }}
+      transition={{ delay: 1.75, times: [0, 0.9, 1] }}
       className="bg-primary-light inset-0 absolute z-40 grid place-content-center"
       aria-hidden="true"
     >
