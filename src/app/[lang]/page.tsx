@@ -27,6 +27,14 @@ export async function generateMetadata({
   return {
     title: prismic.asText(home.data.title),
     description: home.data.meta_description,
+    metadataBase: new URL("https://www.nicolas-fiascaro.com"),
+    alternates: {
+      canonical: "/",
+      languages: {
+        "en-US": "/en-us",
+        "fr-FR": "/fr-fr",
+      },
+    },
     openGraph: {
       title: home.data.meta_title || undefined,
       images: [
