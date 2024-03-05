@@ -8,6 +8,7 @@ import { createClient } from "@/prismicio"
 import { components } from "@/slices"
 import { getLocales } from "@/lib/getLocales"
 import Header from "@/ui/Header/Header"
+import { commonMetas } from "@/lib/utils"
 
 const componentsT: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -34,6 +35,7 @@ export async function generateMetadata({
     .catch(() => notFound())
 
   return {
+    ...commonMetas,
     title: prismic.asText(page.data.title),
     description: page.data.meta_description,
     openGraph: {

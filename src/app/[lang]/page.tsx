@@ -7,6 +7,7 @@ import { createClient } from "@/prismicio"
 import { components } from "@/slices"
 import { getLocales } from "@/lib/getLocales"
 import Header from "@/ui/Header/Header"
+import { commonMetas } from "@/lib/utils"
 
 /**
  * This component renders your homepage.
@@ -25,16 +26,9 @@ export async function generateMetadata({
   const home = await client.getByUID("page", "home", { lang })
 
   return {
+    ...commonMetas,
     title: prismic.asText(home.data.title),
     description: home.data.meta_description,
-    metadataBase: new URL("https://www.nicolas-fiascaro.com"),
-    alternates: {
-      canonical: "/",
-      languages: {
-        "en-US": "/en-us",
-        "fr-FR": "/fr-fr",
-      },
-    },
     openGraph: {
       title: home.data.meta_title || undefined,
       images: [

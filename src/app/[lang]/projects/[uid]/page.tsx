@@ -6,6 +6,7 @@ import { createClient } from "@/prismicio"
 import { components } from "@/slices"
 import { getLocales } from "@/lib/getLocales"
 import Header from "@/ui/Header/Header"
+import { commonMetas } from "@/lib/utils"
 
 type Params = { uid: string; lang: string }
 
@@ -43,6 +44,7 @@ export async function generateMetadata({
     .catch(() => notFound())
 
   return {
+    ...commonMetas,
     title: page.data.meta_title,
     description: page.data.meta_description,
   }
