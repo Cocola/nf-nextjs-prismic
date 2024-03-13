@@ -29,7 +29,11 @@ export const Footer = () => {
               <Script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" />
             </>
           ) : (
-            <div className="font-bold text-center block">ENV DEV</div>
+            <div className="flex justify-center items-center">
+              <div id="wcb" className="carbonbadge wcb-d"></div>
+              <Script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" />
+            </div>
+            // <div className="font-bold text-center block">ENV DEV</div>
           )}
         </div>
       </div>

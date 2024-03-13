@@ -25,7 +25,7 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
             <span className="relative z-10">
               {slice.primary.title}
               <motion.span
-                className="origin-left block absolute left-0 bottom-4 h-1/4 -z-10 -rotate-1 bg-primary-light"
+                className="origin-left block absolute left-0 bottom-0 md:bottom-2 h-1/4 -z-10 -rotate-1 bg-primary-light"
                 animate={{
                   width: ["0%", "100%"],
                 }}
@@ -67,7 +67,7 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
             <div className="p-2 pt-3">
               <PrismicLink
                 field={slice.primary.project_link}
-                className="relative font-medium before:absolute before:-inset-2 before:bg-primary-light  text-zinc-800 before:transition-transform before:-z-10 hover:before:scale-105 focus:outline-offset-8"
+                className="relative font-semibold before:absolute before:-inset-2 before:bg-primary-light  text-zinc-800 before:transition-transform before:-z-10 hover:before:scale-105 focus:outline-offset-8"
               >
                 {slice.primary.project_link_label}&nbsp;→
               </PrismicLink>
