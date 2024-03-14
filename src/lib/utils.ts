@@ -7,4 +7,7 @@ export const commonMetas = {
             "fr-FR": "/fr-fr",
         },
     },
+    verification: {
+        google: "haedaDKFZrr9oEJ2ttT6TqVJsK3L5ZKAlGjqCwn0oTw",
+      },
 }
