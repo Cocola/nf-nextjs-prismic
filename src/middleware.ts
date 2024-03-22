@@ -1,17 +1,29 @@
-import { NextRequest } from "next/server";
-import { createLocaleRedirect } from "@prismicio/next";
-import { createClient } from "@/prismicio";
+import { NextRequest, NextResponse } from 'next/server';
+import { createClient } from '@/prismicio';
 
 export async function middleware(request: NextRequest) {
   const client = createClient();
-  const redirect = await createLocaleRedirect({ client, request, omitDefaultLocale: true,  });
+  const repository = await client.getRepository();
 
-  if (redirect) {
-    return redirect;
+  const locales = repository.languages.map((lang) => lang.id);
+  const defaultLocale = locales[1];
+
+  // Check if there is any supported locale in the pathname
+  const { pathname } = request.nextUrl;
+
+  const pathnameIsMissingLocale = locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  );
+
+  // Redirect to default locale if there is no supported locale prefix
+  if (pathnameIsMissingLocale) {
+    return NextResponse.rewrite(
+      new URL(`/${defaultLocale}${pathname}`, request.url)
+    );
   }
 }
 
 export const config = {
-  // Do not localize these paths
-  matcher: ["/((?!_next|api|slice-simulator|favicon.ico).*)"],
+	// Don’t change the URL of Next.js assets starting with _next
+  matcher: ['/((?!_next).*)'],
 };
