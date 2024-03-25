@@ -49,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return (
       {
         url: page.uid === 'home' ? baseUrl: `${baseUrl}${page.url}`,
-        lastModified: page.last_publication_date,
+        lastModified: page.last_publication_date.replace('0000','00:00'),
       }
     )
   })
@@ -57,7 +57,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return (
         {
           url: `${baseUrl}${page.url}`,
-          lastModified: page.last_publication_date,
+          lastModified: page.last_publication_date.replace('0000','00:00'),
         }
     )
   })
