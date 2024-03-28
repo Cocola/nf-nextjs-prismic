@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.24",
+    "autoprefixer": "^10.4.19",
     "concurrently": "^8.2.2",
     "eslint-config-next": "^14.0.1",
     "postcss": "^8.4.31",

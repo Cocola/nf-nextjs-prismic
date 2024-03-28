@@ -28,7 +28,7 @@ export default async function Header({ locales, lang }: HeaderProps) {
   const nav = await client.getSingle("navigation", { lang: lang })
 
   return (
-    <header className="px-6 py-2 md:py-4 fixed top-0 left-0 right-0 backdrop-blur-sm z-20">
+    <header className="px-6 py-2 md:py-4 fixed top-0 left-0 right-0 bg-zinc-100/80 dark:bg-zinc-800/80 backdrop-blur-sm z-20">
       <div className="mx-auto w-full max-w-6xl">
         <div className="flex justify-between items-center">
           <svg
