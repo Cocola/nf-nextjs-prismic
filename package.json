@@ -34,7 +34,7 @@
     "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "@slicemachine/adapter-next": "^0.3.24",
+    "@slicemachine/adapter-next": "^0.3.38",
     "autoprefixer": "^10.4.19",
     "concurrently": "^8.2.2",
     "eslint-config-next": "^14.0.1",
