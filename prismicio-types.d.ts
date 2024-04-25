@@ -4,6 +4,49 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Content for Linkedin Push documents
+ */
+interface LinkedinPushDocumentData {
+  /**
+   * Title field in *Linkedin Push*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: linkedin_push.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Label field in *Linkedin Push*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: linkedin_push.label
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Linkedin Push document from Prismic
+ *
+ * - **API ID**: `linkedin_push`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LinkedinPushDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<LinkedinPushDocumentData>,
+    "linkedin_push",
+    Lang
+  >;
+
 type NavigationDocumentDataSlicesSlice = NavigationItemSlice;
 
 /**
@@ -196,6 +239,7 @@ export type ProjectDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | LinkedinPushDocument
   | NavigationDocument
   | PageDocument
   | ProjectDocument;
@@ -917,6 +961,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      LinkedinPushDocument,
+      LinkedinPushDocumentData,
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataSlicesSlice,

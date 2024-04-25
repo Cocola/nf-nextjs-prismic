@@ -1,0 +1,25 @@
+{
+  "id": "linkedin_push",
+  "label": "Linkedin Push",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "label": {
+        "type": "Text",
+        "config": {
+          "label": "Label",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

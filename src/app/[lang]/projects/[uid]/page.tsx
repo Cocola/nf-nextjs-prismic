@@ -7,6 +7,7 @@ import { components } from "@/slices"
 import { getLocales } from "@/lib/getLocales"
 import Header from "@/ui/Header/Header"
 import { commonMetas } from "@/lib/utils"
+import LinkedinPush from "@/ui/LinkedinPush/LinkedinPush"
 
 type Params = { uid: string; lang: string }
 
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Params }) {
         </div>
       </div>
       <SliceZone slices={page.data.slices} components={components} />
+      <LinkedinPush lang={params.lang} />
     </>
   )
 }
