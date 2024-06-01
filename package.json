@@ -31,7 +31,7 @@
     "react-konami-code": "^2.3.0",
     "react-responsive": "^10.0.0",
     "react-use": "^17.5.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.38",
