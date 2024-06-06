@@ -28,6 +28,7 @@ const ProjectHero = ({ slice }: ProjectHeroProps): JSX.Element => {
             field={slice.primary.image}
             alt={""}
             className="overflow rounded-3xl md:max-h-[80dvh]"
+            loading="eager"
           />
           <PrismicImage
             field={slice.primary.image}
