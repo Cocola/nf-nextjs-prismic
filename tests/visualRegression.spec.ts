@@ -1,6 +1,4 @@
-// file: tests/visualRegression.spec.ts
-
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@chromatic-com/playwright";
 
 const baseUrl = process.env.BASE_URL || 'http://localhost:3086';
 
