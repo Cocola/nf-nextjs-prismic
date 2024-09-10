@@ -1,4 +1,4 @@
-name: "Chromatic Visual Tests"
+name: "Visual Tests"
 
 on:
   push:
