@@ -37,3 +37,5 @@ next-env.d.ts
 
 # pLaywright
 /test-results
+test-results/.last-run.json
+build-storybook.log

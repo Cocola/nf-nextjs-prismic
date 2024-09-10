@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "chromatic": "chromatic --playwright --exit-zero-on-changes"
   },
   "dependencies": {
     "@playwright/test": "^1.46.1",
