@@ -67,7 +67,7 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
             <div className="pt-3">
               <PrismicLink
                 field={slice.primary.project_link}
-                className="group relative inline-block p-2 px-9 font-semibold before:absolute before:-inset-0 before:bg-primary-light before:rounded text-zinc-800 before:transition-transform before:-z-10 focus:before:scale-105 hover:before:scale-105 focus:outline-offset-8 "
+                className="group relative z-10 inline-block p-2 px-9 font-semibold before:absolute before:-inset-0 before:bg-primary-light before:rounded text-zinc-800 before:transition-transform before:-z-10 focus:before:scale-105 hover:before:scale-105 focus:outline-offset-8 "
               >
                 {slice.primary.project_link_label}
                 <span className="absolute transition-transform opacity-0 right-0 -translate-x-6 group-hover:-translate-x-2 group-hover:opacity-100 group-focus:-translate-x-1 group-focus:opacity-100">
