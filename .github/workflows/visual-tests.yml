@@ -24,8 +24,7 @@ on:
 jobs:
   playwright:
     runs-on: ubuntu-latest
-    environment:
-      name: ${{ github.ref_name }}
+    environment: production_environment
     container:
       image: mcr.microsoft.com/playwright:v1.46.1-jammy
     steps:
@@ -79,8 +78,7 @@ jobs:
     name: Run Chromatic
     needs: playwright
     runs-on: ubuntu-latest
-    environment:
-      name: ${{ github.ref_name }}
+    environment: production_environment
     steps:
       - uses: actions/checkout@v4
         with:
