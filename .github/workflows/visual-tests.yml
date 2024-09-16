@@ -24,7 +24,6 @@ on:
 jobs:
   playwright:
     runs-on: ubuntu-latest
-    environment: Production
     container:
       image: mcr.microsoft.com/playwright:v1.46.1-jammy
     steps:
@@ -78,7 +77,6 @@ jobs:
     name: Run Chromatic
     needs: playwright
     runs-on: ubuntu-latest
-    environment: Production
     steps:
       - uses: actions/checkout@v4
         with:
