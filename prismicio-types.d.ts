@@ -245,115 +245,115 @@ export type AllDocumentTypes =
   | ProjectDocument;
 
 /**
- * Primary content in *HomeHero → Primary*
+ * Primary content in *HomeHero → Default → Primary*
  */
 export interface HomeHeroSliceDefaultPrimary {
   /**
-   * Title field in *HomeHero → Primary*
+   * Title field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.title
+   * - **API ID Path**: home_hero.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
 
   /**
-   * Current position date field in *HomeHero → Primary*
+   * Current position date field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.current_position_date
+   * - **API ID Path**: home_hero.default.primary.current_position_date
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   current_position_date: prismic.KeyTextField;
 
   /**
-   * Current position title field in *HomeHero → Primary*
+   * Current position title field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.current_position_title
+   * - **API ID Path**: home_hero.default.primary.current_position_title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   current_position_title: prismic.KeyTextField;
 
   /**
-   * Current position subtitle field in *HomeHero → Primary*
+   * Current position subtitle field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.current_position_subtitle
+   * - **API ID Path**: home_hero.default.primary.current_position_subtitle
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   current_position_subtitle: prismic.KeyTextField;
 
   /**
-   * Past position date field in *HomeHero → Primary*
+   * Past position date field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.past_position_date
+   * - **API ID Path**: home_hero.default.primary.past_position_date
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   past_position_date: prismic.KeyTextField;
 
   /**
-   * Past position title field in *HomeHero → Primary*
+   * Past position title field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.past_position_title
+   * - **API ID Path**: home_hero.default.primary.past_position_title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   past_position_title: prismic.KeyTextField;
 
   /**
-   * Past position subtitle field in *HomeHero → Primary*
+   * Past position subtitle field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.past_position_subtitle
+   * - **API ID Path**: home_hero.default.primary.past_position_subtitle
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   past_position_subtitle: prismic.KeyTextField;
 
   /**
-   * Linkedin link field in *HomeHero → Primary*
+   * Linkedin link field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.linkedin_link
+   * - **API ID Path**: home_hero.default.primary.linkedin_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   linkedin_link: prismic.LinkField;
 
   /**
-   * Linkedin link label field in *HomeHero → Primary*
+   * Linkedin link label field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.linkedin_link_label
+   * - **API ID Path**: home_hero.default.primary.linkedin_link_label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   linkedin_link_label: prismic.KeyTextField;
 
   /**
-   * Project link field in *HomeHero → Primary*
+   * Project link field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.project_link
+   * - **API ID Path**: home_hero.default.primary.project_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   project_link: prismic.LinkField;
 
   /**
-   * Project link label field in *HomeHero → Primary*
+   * Project link label field in *HomeHero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero.primary.project_link_label
+   * - **API ID Path**: home_hero.default.primary.project_link_label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   project_link_label: prismic.KeyTextField;
@@ -390,15 +390,15 @@ export type HomeHeroSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *KeyFigures → Primary*
+ * Primary content in *KeyFigures → Default → Primary*
  */
 export interface KeyFiguresSliceDefaultPrimary {
   /**
-   * Title field in *KeyFigures → Primary*
+   * Title field in *KeyFigures → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: key_figures.primary.title
+   * - **API ID Path**: key_figures.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
@@ -481,28 +481,38 @@ export type KeyFiguresSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *NavigationItem → Primary*
+ * Primary content in *NavigationItem → Default → Primary*
  */
 export interface NavigationItemSliceDefaultPrimary {
   /**
-   * Name field in *NavigationItem → Primary*
+   * Name field in *NavigationItem → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation_item.primary.name
+   * - **API ID Path**: navigation_item.default.primary.name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   name: prismic.KeyTextField;
 
   /**
-   * Link field in *NavigationItem → Primary*
+   * Link field in *NavigationItem → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation_item.primary.link
+   * - **API ID Path**: navigation_item.default.primary.link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
+
+  /**
+   * Icon field in *NavigationItem → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.default.primary.icon
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  icon: prismic.KeyTextField;
 }
 
 /**
@@ -536,35 +546,35 @@ export type NavigationItemSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *ProjectHero → Primary*
+ * Primary content in *ProjectHero → Default → Primary*
  */
 export interface ProjectHeroSliceDefaultPrimary {
   /**
-   * Image field in *ProjectHero → Primary*
+   * Image field in *ProjectHero → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: project_hero.primary.image
+   * - **API ID Path**: project_hero.default.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
 
   /**
-   * Title field in *ProjectHero → Primary*
+   * Title field in *ProjectHero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: project_hero.primary.title
+   * - **API ID Path**: project_hero.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
 
   /**
-   * Description field in *ProjectHero → Primary*
+   * Description field in *ProjectHero → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: project_hero.primary.description
+   * - **API ID Path**: project_hero.default.primary.description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
@@ -677,65 +687,65 @@ export type ProjectsGridSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *ProjectsNav → Primary*
+ * Primary content in *ProjectsNav → Default → Primary*
  */
 export interface ProjectsNavSliceDefaultPrimary {
   /**
-   * Previous label field in *ProjectsNav → Primary*
+   * Previous label field in *ProjectsNav → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: projects_nav.primary.previous_label
+   * - **API ID Path**: projects_nav.default.primary.previous_label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   previous_label: prismic.KeyTextField;
 
   /**
-   * Previous Project name field in *ProjectsNav → Primary*
+   * Previous Project name field in *ProjectsNav → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: projects_nav.primary.previous_project_name
+   * - **API ID Path**: projects_nav.default.primary.previous_project_name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   previous_project_name: prismic.KeyTextField;
 
   /**
-   * Previous Project link field in *ProjectsNav → Primary*
+   * Previous Project link field in *ProjectsNav → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: projects_nav.primary.previous_project_link
+   * - **API ID Path**: projects_nav.default.primary.previous_project_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   previous_project_link: prismic.LinkField;
 
   /**
-   * Next label field in *ProjectsNav → Primary*
+   * Next label field in *ProjectsNav → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: projects_nav.primary.next_label
+   * - **API ID Path**: projects_nav.default.primary.next_label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   next_label: prismic.KeyTextField;
 
   /**
-   * Next Project name field in *ProjectsNav → Primary*
+   * Next Project name field in *ProjectsNav → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: projects_nav.primary.next_project_name
+   * - **API ID Path**: projects_nav.default.primary.next_project_name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   next_project_name: prismic.KeyTextField;
 
   /**
-   * Next Project link field in *ProjectsNav → Primary*
+   * Next Project link field in *ProjectsNav → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: projects_nav.primary.next_project_link
+   * - **API ID Path**: projects_nav.default.primary.next_project_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   next_project_link: prismic.LinkField;
@@ -772,15 +782,15 @@ export type ProjectsNavSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *RichText → Primary*
+ * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
   /**
-   * Content field in *RichText → Primary*
+   * Content field in *RichText → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Lorem ipsum...
-   * - **API ID Path**: rich_text.primary.content
+   * - **API ID Path**: rich_text.default.primary.content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
@@ -817,15 +827,15 @@ export type RichTextSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *SimpleVideo → Primary*
+ * Primary content in *SimpleVideo → Default → Primary*
  */
 export interface SimpleVideoSliceDefaultPrimary {
   /**
-   * Source field in *SimpleVideo → Primary*
+   * Source field in *SimpleVideo → Default → Primary*
    *
    * - **Field Type**: Link to Media
    * - **Placeholder**: *None*
-   * - **API ID Path**: simple_video.primary.source
+   * - **API ID Path**: simple_video.default.primary.source
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   source: prismic.LinkToMediaField;
@@ -862,15 +872,15 @@ export type SimpleVideoSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *StickySections → Primary*
+ * Primary content in *StickySections → Default → Primary*
  */
 export interface StickySectionsSliceDefaultPrimary {
   /**
-   * Title field in *StickySections → Primary*
+   * Title field in *StickySections → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: sticky_sections.primary.title
+   * - **API ID Path**: sticky_sections.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;

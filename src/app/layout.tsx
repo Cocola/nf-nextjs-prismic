@@ -11,6 +11,7 @@ import "../ui/globals.css"
 import { dmsans } from "../ui/fonts"
 import { Footer } from "../ui/Footer/Footer"
 import AnimationLayer from "@/ui/AnimationLayer/AnimationLayer"
+import { Logo } from "@/ui/Header/Logo"
 
 const GA = "G-24PVJWPTQ5"
 const siteId = 3814665
@@ -57,7 +58,12 @@ export default function RootLayout({
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <div className="mt-24">{children}</div>
+            <div className="mt-10 md:mt-24">
+              <div className="md:hidden max-md:ml-6 max-md:mb-3">
+                <Logo />
+              </div>
+              {children}
+            </div>
             <Footer />
           </motion.div>
           {firstLoad && <AnimationLayer />}
