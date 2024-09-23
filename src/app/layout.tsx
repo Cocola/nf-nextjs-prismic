@@ -57,7 +57,7 @@ export default function RootLayout({
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <div className="mt-24">{children}</div>
+            <div className="mt-10 md:mt-24">{children}</div>
             <Footer />
           </motion.div>
           {firstLoad && <AnimationLayer />}

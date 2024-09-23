@@ -26,6 +26,13 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "icon": {
+          "type": "Text",
+          "config": {
+            "label": "Icon",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
