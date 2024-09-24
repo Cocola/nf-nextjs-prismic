@@ -1,13 +1,22 @@
-import { test, expect } from "@chromatic-com/playwright";
+import { test, expect } from '@chromatic-com/playwright';
 
 const baseUrl = process.env.BASE_URL || 'http://localhost:3086';
 
-test('Homepage UI', async ({ page }) => {
-  // Utiliser l'URL de base à partir des variables d'environnement
+test('Homepage UI on Desktop', async ({ page }) => {
   await page.goto(`${baseUrl}/`);
   await page.waitForTimeout(2000);
 
-  // Comparer la capture d'écran actuelle avec l'image de référence
+  await expect(page).toHaveScreenshot({
+    maxDiffPixels: 100,
+  });
+});
+
+test('Homepage UI on iPhone 12', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+
+  await page.goto(`${baseUrl}/`);
+  await page.waitForTimeout(2000);
+
   await expect(page).toHaveScreenshot({
     maxDiffPixels: 100,
   });
