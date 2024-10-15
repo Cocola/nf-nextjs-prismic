@@ -70,6 +70,21 @@ export default function RootLayout({
         </div>
         <PrismicPreview repositoryName={repositoryName} />
         <SpeedInsights />
+        <Script id="moustacheai" strategy="afterInteractive">
+          {`(function(d, t) {
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    v.src = "https://chat.moustacheai.com/chat.mjs";
+    v.type = "text/javascript";
+    v.async = true;
+    v.onload = function() {
+      window.initMoustacheAI({
+        chatbot: '8bcf49d7-e851-4322-8327-9c345578937b',
+        userIdentifier: 'yourcustomer@yourcompany.com',
+      })
+    }
+    s.parentNode.insertBefore(v, s);
+  })(document, 'script');`}
+        </Script>
         {process.env.NODE_ENV === "production" && (
           <>
             <Script
