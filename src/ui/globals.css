@@ -7,80 +7,96 @@
   color-scheme: light;
   --konamiPosX: -75%;
 }
+
 :root[data-theme='dark'] {
   color-scheme: dark;
 }
-[data-oembed-type] iframe{
-    height: auto;
-    position: relative;
-    @apply max-w-7xl;
-    @apply rounded-xl;
-    @apply w-[80vw];
-    @apply left-1/2;
-    @apply -translate-x-1/2;
-    @apply aspect-video;
+
+[data-oembed-type] iframe {
+  height: auto;
+  position: relative;
+  @apply max-w-7xl;
+  @apply rounded-xl;
+  @apply w-[80vw];
+  @apply left-1/2;
+  @apply -translate-x-1/2;
+  @apply aspect-video;
 }
 
 *:focus-visible {
-    @apply outline-dashed;
-    @apply outline-2;
-    @apply outline-offset-2;
+  @apply outline-dashed;
+  @apply outline-2;
+  @apply outline-offset-2;
 }
 
 .block-img {
-    @apply mb-7;
-    @apply last:mb-0;
-    @apply rounded-xl;
-    @apply overflow-hidden;
-    @apply shadow-xl;
+  @apply mb-7;
+  @apply last:mb-0;
+  @apply rounded-xl;
+  @apply overflow-hidden;
+  @apply shadow-xl;
 }
 
 .konami {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    left: 50%;
-    bottom: 0;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate3d(var(--konamiPosX), 0, 0);
+  animation: showCocola 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.konamiImg {
+  display: block;
+}
+
+@keyframes showCocola {
+  0% {
+    transform: translate3d(var(--konamiPosX), 100%, 0);
+  }
+
+  25% {
     transform: translate3d(var(--konamiPosX), 0, 0);
-    animation: showCocola 2s cubic-bezier(0.25, 1, 0.5, 1);
   }
+
+  75% {
+    transform: translate3d(var(--konamiPosX), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--konamiPosX), 100%, 0);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --konamiPosX: -50%;
+    --gridSize: 3rem;
+  }
+
+  .btn {
+    font-size: 75%;
+  }
+
+  html #wcb.carbonbadge {
+    max-width: 280px;
+  }
+
+  .react-toggle {
+    right: 2rem
+  }
+
+  .grid {
+    background-size: 2rem 2rem;
+  }
+
   .konamiImg {
-    display: block;
+    width: 200%;
+    height: 200%;
   }
-  @keyframes showCocola {
-    0% {
-      transform: translate3d(var(--konamiPosX), 100%, 0);
-    }
-    25% {
-      transform: translate3d(var(--konamiPosX), 0, 0);
-    }
-    75% {
-      transform: translate3d(var(--konamiPosX), 0, 0);
-    }
-    100% {
-      transform: translate3d(var(--konamiPosX), 100%, 0);
-    }
-  } 
-  
-  @media screen and (max-width: 1024px) {
-    :root {
-      --konamiPosX: -50%;
-      --gridSize: 3rem;
-    }
-    .btn {
-      font-size: 75%;
-    }
-    html #wcb.carbonbadge { 
-      max-width: 280px;
-    }
-    .react-toggle {
-      right: 2rem
-    }
-    .grid {
-      background-size: 2rem 2rem;
-    }
-    .konamiImg {
-      width: 200%;
-      height: 200%;
-    }
+
+  div#moustache-ai-chat-icon {
+    bottom: 80px !important;
   }
+}
