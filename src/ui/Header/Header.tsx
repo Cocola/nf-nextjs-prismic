@@ -2,13 +2,8 @@ import { createClient } from "@/prismicio"
 import { Navigation } from "../Navigation/Navigation"
 import { PrismicNextLink } from "@prismicio/next"
 
-import dynamic from "next/dynamic"
 import { Logo } from "./Logo"
-
-const SetThemeButton = dynamic(() => import("../ModeToggle/ModeToggle"), {
-  ssr: false,
-  loading: () => <div className="w-9 h-9" />,
-})
+import { ModeToggleDynamic } from "../ModeToggle/ModeToggleDynamic"
 
 const localeLabels = {
   "en-us": "EN",
@@ -55,7 +50,7 @@ export default async function Header({ locales, lang }: HeaderProps) {
                 </li>
               ))}
             </ul>
-            <SetThemeButton />
+            <ModeToggleDynamic />
           </div>
         </div>
       </div>
