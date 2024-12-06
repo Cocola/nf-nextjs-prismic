@@ -17,11 +17,17 @@ import { commonMetas } from "@/lib/utils"
  * Use the SliceZone to render the content of the page.
  */
 
-export async function generateMetadata({
-  params: { lang },
-}: {
-  params: { lang: string }
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ lang: string }>
+  }
+): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    lang
+  } = params;
+
   const client = createClient()
   const home = await client.getByUID("page", "home", { lang })
 
@@ -40,11 +46,17 @@ export async function generateMetadata({
   }
 }
 
-export default async function Index({
-  params: { lang },
-}: {
-  params: { lang: string }
-}) {
+export default async function Index(
+  props: {
+    params: Promise<{ lang: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    lang
+  } = params;
+
   /**
    * The client queries content from the Prismic API
    */
