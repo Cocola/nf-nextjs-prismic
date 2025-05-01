@@ -34,7 +34,7 @@
     "react-konami-code": "^2.3.0",
     "react-responsive": "^10.0.0",
     "react-use": "^17.5.1",
-    "typescript": "^5.4.5"
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@chromatic-com/playwright": "^0.6.18",
