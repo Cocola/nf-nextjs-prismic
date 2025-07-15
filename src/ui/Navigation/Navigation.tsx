@@ -21,7 +21,7 @@ export const Navigation = ({ data }: any) => {
             <li
               key={JSON.stringify(item)}
               className={clsx(
-                "text-xs md:text-base font-semibold block transition-opacity hover:opacity-100 max-md:p-3 max-md:min-w-[72px]",
+                "text-xs md:text-base font-semibold block transition-opacity hover:opacity-100 max-sm:p-2 max-md:p-3 max-md:min-w-[72px]",
                 currentCat &&
                   "max-md:bg-white/80 dark:max-md:bg-white/10 max-md:rounded-full md:underline md:underline-offset-8 md:opacity-100",
                 currentCat ? "opacity-100" : "opacity-80"
@@ -37,7 +37,7 @@ export const Navigation = ({ data }: any) => {
                   {item.primary.icon === "about" && <FaRegHandPeace />}
                   {item.primary.icon === "projects" && <HiOutlineLightBulb />}
                 </span>
-                <span className="max-md:flex max-md:justify-center">
+                <span className="max-md:flex max-md:justify-center max-md:whitespace-nowrap">
                   {item.primary.name}
                 </span>
               </PrismicLink>
