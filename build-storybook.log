@@ -1,19 +1,27 @@
-storybook v8.2.9
-
-info => Cleaning outputDir: ../../../../../var/folders/v5/dwmxt6c54_96zpy4rqb_zbzc0000gn/T/chromatic--5357-4L8BO92LyBn4
+[1m@storybook/core v8.6.14
+[22m
+info => Cleaning outputDir: [36m../../../../../var/folders/v5/dwmxt6c54_96zpy4rqb_zbzc0000gn/T/chromatic--76841-96rwBcewrdY8[39m
 info => Loading presets
 info => Building manager..
 WARN unable to find package.json for @chromatic-com/shared-e2e
 WARN unable to find package.json for @storybook/types
-info => Manager built (114 ms)
+info => Manager built ([38;2;181;126;229m125 ms[39m)
 info => Building preview..
-info Addon-docs: using MDX3
-info => Using implicit CSS loaders
-info => Using default Webpack5 setup
-info => Copying static files: test-results/chromatic-archives/archive at ../../../../../var/folders/v5/dwmxt6c54_96zpy4rqb_zbzc0000gn/T/chromatic--5357-4L8BO92LyBn4
-WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
-WARN This can impact web performance.
-WARN Assets: 
-WARN   92.c1f974e9.iframe.bundle.js (1.21 MiB)
-info => Preview built (3.44 s)
-info => Output directory: /var/folders/v5/dwmxt6c54_96zpy4rqb_zbzc0000gn/T/chromatic--5357-4L8BO92LyBn4
+[38;2;241;97;97m=> Failed to build the preview[39m
+[38;2;241;97;97mTypeError: (0 , import_common.handlebars) is not a function[39m
+    at getVirtualModules (./node_modules/@storybook/builder-webpack5/dist/presets/preview-preset.js:1:3007)
+    at async iframe_webpack_config_default (./node_modules/@storybook/builder-webpack5/dist/presets/preview-preset.js:6:222)
+    at async builder (./node_modules/@storybook/builder-webpack5/dist/index.js:1:8419)
+    at async Module.build (./node_modules/@storybook/builder-webpack5/dist/index.js:1:10044)
+    at async Promise.all (index 0)
+    at async buildStaticStandalone (./node_modules/@storybook/core/dist/core-server/index.cjs:35503:3)
+    at async withTelemetry (./node_modules/@storybook/core/dist/core-server/index.cjs:35788:12)
+    at async build (./node_modules/@storybook/core/dist/cli/bin/index.cjs:5837:3)
+    at async s.<anonymous> (./node_modules/@storybook/core/dist/cli/bin/index.cjs:6072:7)
+
+[35m[1mattention[22m[39m => Storybook now collects completely anonymous telemetry regarding usage.
+This information is used to shape Storybook's roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+[36mhttps://storybook.js.org/telemetry[39m
+
+info => Copying static files: [36mtest-results/chromatic-archives/archive[39m at [36m../../../../../var/folders/v5/dwmxt6c54_96zpy4rqb_zbzc0000gn/T/chromatic--76841-96rwBcewrdY8[39m

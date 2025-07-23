@@ -37,8 +37,9 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "@chromatic-com/playwright": "^0.6.18",
+    "@chromatic-com/playwright": "^0.12.5",
     "@slicemachine/adapter-next": "^0.3.42",
+    "chromatic": "^13.1.2",
     "autoprefixer": "^10.4.21",
     "chromatic": "^11.7.1",
     "concurrently": "^9.1.2",
