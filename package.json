@@ -39,10 +39,11 @@
   "devDependencies": {
     "@chromatic-com/playwright": "^0.12.5",
     "@slicemachine/adapter-next": "^0.3.42",
-    "autoprefixer": "^10.4.20",
     "chromatic": "^13.1.2",
+    "autoprefixer": "^10.4.21",
+    "chromatic": "^11.7.1",
     "concurrently": "^9.1.2",
-    "eslint-config-next": "^15.0.4",
+    "eslint-config-next": "^15.3.4",
     "postcss": "^8.4.40",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.5.7",
