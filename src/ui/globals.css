@@ -12,6 +12,14 @@
   color-scheme: dark;
 }
 
+#wcb.carbonbadge #wcb_2 {
+  color: @apply text-zinc-900;
+}
+
+:root[data-theme='dark'] #wcb.carbonbadge #wcb_2 {
+  color: @apply text-white;
+}
+
 [data-oembed-type] iframe {
   height: auto;
   position: relative;
@@ -81,6 +89,7 @@
 
   html #wcb.carbonbadge {
     max-width: 280px;
+    margin: auto;
   }
 
   .react-toggle {
