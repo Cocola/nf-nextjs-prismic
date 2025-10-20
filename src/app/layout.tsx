@@ -1,35 +1,20 @@
-"use client"
-import { useEffect, useState } from "react"
+import type { ReactNode } from "react"
 import { PrismicPreview } from "@prismicio/next"
-import { repositoryName } from "@/prismicio"
-import { motion } from "framer-motion"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
-import { getTheme } from "../lib/getTheme"
 
-import "../ui/globals.css"
-import { dmsans } from "../ui/fonts"
-import { Footer } from "../ui/Footer/Footer"
-import AnimationLayer from "@/ui/AnimationLayer/AnimationLayer"
-import { Logo } from "@/ui/Header/Logo"
+import { repositoryName } from "@/prismicio"
+import { getTheme } from "@/lib/getTheme"
+import "@/ui/globals.css"
+import { dmsans } from "@/ui/fonts"
+
+import { ClientLayout } from "./client-layout"
 
 const GA = "G-24PVJWPTQ5"
 const siteId = 3814665
 const hotjarVersion = 6
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const [firstLoad, setFirstLoad] = useState<boolean>(false)
-  useEffect(() => {
-    if (sessionStorage.getItem("firstLoad") === null) {
-      setFirstLoad(true)
-      sessionStorage.setItem("firstLoad", "true")
-    }
-  }, [])
-
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" id="colorScheme-root" suppressHydrationWarning>
       <head>
@@ -52,22 +37,7 @@ export default function RootLayout({
       <body
         className={`${dmsans.className} antialiased min-h-screen bg-zinc-100  text-zinc-900 dark:bg-zinc-800 dark:text-zinc-300`}
       >
-        <div className="min-h-screen flex flex-col gap-3 justify-between bg-transparent dark:bg-[radial-gradient(#111_1px,transparent_1px)] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <div className="mt-10 md:mt-24">
-              <div className="md:hidden max-md:ml-6 max-md:mb-3">
-                <Logo />
-              </div>
-              {children}
-            </div>
-            <Footer />
-          </motion.div>
-          {firstLoad && <AnimationLayer />}
-        </div>
+        <ClientLayout>{children}</ClientLayout>
         <PrismicPreview repositoryName={repositoryName} />
         <SpeedInsights />
         <Script id="moustacheai" strategy="afterInteractive">
